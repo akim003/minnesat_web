@@ -11,56 +11,56 @@ const sponsors = [
     name: "Aerospace Dynamics",
     description: "Leading provider of aerospace components and systems.",
     level: "gold",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=aerospace tech company logo 1",
+    imageUrl: "/sponsors/sponsor-logo-1.png",
     website: "https://example.com/aerospace-dynamics",
   },
   {
     name: "TechSat Solutions",
     description: "Innovative satellite technology and communications systems.",
     level: "gold",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=satellite tech company logo 2",
+    imageUrl: "/sponsors/sponsor-logo-2.png",
     website: "https://example.com/techsat",
   },
   {
     name: "Minnesota Engineering Group",
     description: "Local engineering consultancy supporting student initiatives.",
     level: "silver",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=engineering company logo 3",
+    imageUrl: "/sponsors/sponsor-logo-3.png",
     website: "https://example.com/meg",
   },
   {
     name: "Quantum Electronics",
     description: "Manufacturer of high-precision electronic components.",
     level: "silver",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=electronics company logo 4",
+    imageUrl: "/sponsors/sponsor-logo-4.png",
     website: "https://example.com/quantum",
   },
   {
     name: "Stellar Systems",
     description: "Space technology research and development firm.",
     level: "silver",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=space tech company logo 5",
+    imageUrl: "/sponsors/sponsor-logo-5.png",
     website: "https://example.com/stellar",
   },
   {
     name: "Twin Cities Manufacturing",
     description: "Local manufacturing partner for custom components.",
     level: "bronze",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=manufacturing company logo 6",
+    imageUrl: "/sponsors/sponsor-logo-6.png",
     website: "https://example.com/tcm",
   },
   {
     name: "Northstar Innovations",
     description: "Technology startup focused on sensor systems.",
     level: "bronze",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=sensor tech company logo 7",
+    imageUrl: "/sponsors/sponsor-logo-7.png",
     website: "https://example.com/northstar",
   },
   {
     name: "University Engineering Department",
     description: "Academic support and resources from our home department.",
     level: "bronze",
-    imageUrl: "/abstract-tech-logo.png?height=150&width=250&query=university engineering logo 8",
+    imageUrl: "/sponsors/sponsor-logo-8.png",
     website: "https://example.com/ued",
   },
 ]
@@ -101,13 +101,7 @@ export default function SponsorsClientPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/orbiting-communication.png"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -199,7 +193,11 @@ export default function SponsorsClientPage() {
                       <div className="flex items-center justify-between mb-4">
                         <div className="relative h-16 w-40">
                           <Image
-                            src={sponsor.imageUrl || "/placeholder.svg"}
+                            src={
+                              sponsor.imageUrl
+                                ? sponsor.imageUrl
+                                : "/placeholder.svg?height=150&width=250&query=company logo"
+                            }
                             alt={sponsor.name}
                             fill
                             className="object-contain"
@@ -242,7 +240,11 @@ export default function SponsorsClientPage() {
                       <div className="flex items-center justify-between mb-4">
                         <div className="relative h-16 w-40">
                           <Image
-                            src={sponsor.imageUrl || "/placeholder.svg"}
+                            src={
+                              sponsor.imageUrl
+                                ? sponsor.imageUrl
+                                : "/placeholder.svg?height=150&width=250&query=company logo"
+                            }
                             alt={sponsor.name}
                             fill
                             className="object-contain"
@@ -285,7 +287,11 @@ export default function SponsorsClientPage() {
                       <div className="flex items-center justify-between mb-4">
                         <div className="relative h-16 w-40">
                           <Image
-                            src={sponsor.imageUrl || "/placeholder.svg"}
+                            src={
+                              sponsor.imageUrl
+                                ? sponsor.imageUrl
+                                : "/placeholder.svg?height=150&width=250&query=company logo"
+                            }
                             alt={sponsor.name}
                             fill
                             className="object-contain"
@@ -337,13 +343,7 @@ export default function SponsorsClientPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image
-                  src="/orbiting-communication.png"
-                  alt="MinneSat Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10"
-                />
+                <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>
               <p className="text-white/60 max-w-xs">

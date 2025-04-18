@@ -1,4 +1,53 @@
-import Image from "next/image"
+# MinneSat Website Image Structure
+
+This folder contains all the images used in the MinneSat website. The images are organized by page to make it easier to manage and replace them.
+
+## Folder Structure
+
+- `/shared/`: Images used across multiple pages
+  - `logo.png`: The MinneSat logo used in the header and footer
+
+- `/home/`: Images used on the home page
+  - `hero-background.png`: The background image for the hero section
+  - `about-image.png`: The image used in the about section
+  - `team-member-1.png` to `team-member-4.png`: Team member preview images
+
+- `/team/`: Images used on the team page
+  - `president.png`: Photo of the club president
+  - `software-lead.png`: Photo of the software lead
+  - `mechanical-lead.png`: Photo of the mechanical lead
+  - `electrical-lead.png`: Photo of the electrical lead
+  - `treasurer.png`: Photo of the treasurer
+
+- `/legacy/`: Images used on the legacy pages
+  - `project-2023.png`: Image for the 2023 project
+  - `project-2024.png`: Image for the 2024 project
+  - `project-2025.png`: Image for the 2025 project
+  - `gallery-image-1.png` to `gallery-image-3.png`: Gallery images for project detail pages
+
+- `/sponsors/`: Images used on the sponsors page
+  - `sponsor-logo-1.png` to `sponsor-logo-8.png`: Sponsor logos
+
+## How to Replace Images
+
+1. Prepare your new image with the same aspect ratio as the original
+2. Name your new image with the same name as the one you want to replace
+3. Replace the file in the appropriate folder
+4. The website will automatically use your new image
+
+## Image Dimensions
+
+- Logo: 40x40 pixels (displayed size, can be higher resolution)
+- Hero background: 1920x1080 pixels
+- Team member photos: 300x300 pixels (square)
+- Project images: 800x600 pixels
+- Sponsor logos: 250x150 pixels (or similar aspect ratio)
+\`\`\`
+
+Let's also update the legacy project data to use the new image paths:
+
+```typescriptreact file="app/legacy/[year]/page.tsx"
+[v0-no-op-code-block-prefix]import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
@@ -12,7 +61,7 @@ const pastProjects = [
     description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
     fullDescription:
       "The 2025 MinneSat team developed our most advanced CanSat to date, featuring a sophisticated autonomous navigation system capable of precise landing control. The system incorporates machine learning algorithms for terrain recognition and advanced sensor fusion for optimal flight path determination.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/legacy/project-2025.png",
     year: "2025",
     teamMembers: ["Emma Johnson", "Michael Chen", "Sophia Rodriguez", "James Wilson"],
     achievements: ["Competition in progress", "Best Technical Design (Preliminary Round)", "Innovation Award Nominee"],
@@ -24,7 +73,7 @@ const pastProjects = [
     description: "Award-winning design with innovative sensor array and data collection capabilities.",
     fullDescription:
       "Our 2024 CanSat featured a revolutionary multi-stage deployment system that allowed for extended data collection during descent. The team implemented a custom PCB design with integrated environmental sensors and a robust telemetry system that maintained connection throughout the mission.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/legacy/project-2024.png",
     year: "2024",
     teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
     achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
@@ -36,7 +85,7 @@ const pastProjects = [
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
     fullDescription:
       "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/legacy/project-2023.png",
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
@@ -78,7 +127,13 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+              <Image
+                src="/shared/logo.png"
+                alt="MinneSat Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -149,7 +204,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
 
             <div className="grid gap-12 lg:grid-cols-2 items-start">
               <div className="relative h-[500px] overflow-hidden rounded-2xl border border-white/10">
-                <Image src={`/legacy/project-${project.year}.png`} alt={project.title} fill className="object-cover" />
+                <Image src={`/legacy/project-${project.year}.png` || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
               </div>
 
@@ -243,7 +298,13 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+                <Image
+                  src="/shared/logo.png"
+                  alt="MinneSat Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
+                />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>
               <p className="text-white/60 max-w-xs">

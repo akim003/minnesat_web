@@ -8,21 +8,21 @@ const pastProjects = [
     id: "2025",
     title: "CanSat 2025 Project",
     description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/project-2025.png",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
     description: "Award-winning design with innovative sensor array and data collection capabilities.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/project-2024.png",
     year: "2024",
   },
   {
     id: "2023",
     title: "CanSat 2023 Project",
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/project-2023.png",
     year: "2023",
   },
 ]
@@ -40,13 +40,7 @@ export default function LegacyPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/orbiting-communication.png"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -112,7 +106,11 @@ export default function LegacyPage() {
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 transition-all duration-300 hover:border-gold/30 hover:shadow-xl hover:shadow-maroon/10">
                     <div className="relative h-80 w-full overflow-hidden">
                       <Image
-                        src={project.imageUrl || "/placeholder.svg?height=600&width=800&query=satellite project cansat"}
+                        src={
+                          project.imageUrl
+                            ? project.imageUrl
+                            : "/placeholder.svg?height=600&width=800&query=satellite project cansat"
+                        }
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -138,13 +136,7 @@ export default function LegacyPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image
-                  src="/orbiting-communication.png"
-                  alt="MinneSat Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10"
-                />
+                <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>
               <p className="text-white/60 max-w-xs">
