@@ -14,7 +14,7 @@ const pastProjects = [
   {
     id: "2024",
     title: "CanSat 2024 Project",
-    description: "Award-winning design with innovative sensor array and data collection capabilities.",
+    description: "Best performance to date!",
     imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
   },

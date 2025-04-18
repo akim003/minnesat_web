@@ -30,7 +30,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/orbiting-communication.png"
+                src="/header.jpg"
                 alt="MinneSat Logo"
                 width={40}
                 height={40}

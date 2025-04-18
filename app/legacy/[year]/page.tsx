@@ -304,21 +304,6 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                       </div>
                     ))}
               </div>
-
-              {/* Instructions for developers */}
-              <div className="mt-8 p-4 border border-dashed border-white/20 rounded-lg bg-zinc-900/50">
-                <h4 className="text-lg font-semibold mb-2 text-gold">Developer Note:</h4>
-                <p className="text-white/70 mb-2">
-                  To add custom gallery images for this project, update the{" "}
-                  <code className="bg-black/30 px-1 py-0.5 rounded">gallery</code> array in the{" "}
-                  <code className="bg-black/30 px-1 py-0.5 rounded">pastProjects</code> data for year {project.year}.
-                </p>
-                <p className="text-white/70">
-                  Each gallery item should have a <code className="bg-black/30 px-1 py-0.5 rounded">url</code> and{" "}
-                  <code className="bg-black/30 px-1 py-0.5 rounded">alt</code> property. Place images in{" "}
-                  <code className="bg-black/30 px-1 py-0.5 rounded">/public/legacy/{project.year}/</code> directory.
-                </p>
-              </div>
             </div>
           </div>
         </section>
