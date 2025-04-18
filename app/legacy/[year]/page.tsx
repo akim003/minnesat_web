@@ -24,7 +24,7 @@ const pastProjects = [
     description: "Award-winning design with innovative sensor array and data collection capabilities.",
     fullDescription:
       "Our 2024 CanSat featured a revolutionary multi-stage deployment system that allowed for extended data collection during descent. The team implemented a custom PCB design with integrated environmental sensors and a robust telemetry system that maintained connection throughout the mission.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
     teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
     achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
