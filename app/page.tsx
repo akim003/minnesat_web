@@ -30,7 +30,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/header.jpg"
+                src="/favicon.jpg"
                 alt="MinneSat Logo"
                 width={40}
                 height={40}
@@ -84,7 +84,7 @@ export default function Home() {
         <section className="relative h-[100vh] overflow-hidden bg-black">
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black z-10"></div>
           <Image
-            src="/night-launch-ascent.png"
+            src="/header.jpg"
             alt="CanSat Launch"
             width={1920}
             height={1080}
