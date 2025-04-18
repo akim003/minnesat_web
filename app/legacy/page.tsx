@@ -22,7 +22,7 @@ const pastProjects = [
     id: "2023",
     title: "CanSat 2023 Project",
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/CanSat2023_Icon.jpg",
     year: "2023",
   },
 ]

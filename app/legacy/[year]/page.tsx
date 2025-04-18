@@ -36,7 +36,7 @@ const pastProjects = [
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
     fullDescription:
       "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/legacy/CanSat2023_Icon.jpg",
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
