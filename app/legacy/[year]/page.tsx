@@ -29,14 +29,14 @@ const pastProjects = [
   {
     id: "2024",
     title: "2024 CanSat Competition",
-    fullTitle: "Multi-Stage Deployment System",
-    description: "Award-winning design with innovative sensor array and data collection capabilities.",
+    fullTitle: "Planetary Probe Instrument Delivery Mission",
+    description: "Best performance to date!",
     fullDescription:
-      "Our 2024 CanSat featured a revolutionary multi-stage deployment system that allowed for extended data collection during descent. The team implemented a custom PCB design with integrated environmental sensors and a robust telemetry system that maintained connection throughout the mission.",
+      "Our team delivered a strong showing at the 2024 CanSat Competition, successfully completing the mission and placing 13th overall out of dozens of international teams. Our headshield deployment worked well, ensuring a stable descent and safe payload delivery. The mission objectives were executed as planned, reflecting the team’s dedication to reliable engineering and thorough testing.",
     imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
-    teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
-    achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
+    teamMembers: ["Ethan Kolby", "Alex Kim", "Marty Michelli", "Andrew Soltis", "Cole Harcey", "Andrew Stotz", "Franklin Woolley", "Shea Larson", "John Kronkvist","Elliot Zimpfer"],
+    achievements: ["13th Place Overall", "Payload Delivered Intact"],
     // Gallery images for each project
     gallery: [
       { url: "/legacy/2024/gallery1.jpg", alt: "CanSat 2024 Design" },
@@ -54,7 +54,7 @@ const pastProjects = [
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
     fullDescription:
       "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
-    imageUrl: "/legacy/CanSat2023_Icon.jpg",
+    imageUrl: "/legacy/CanSat2023_Icon.jpeg",
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],

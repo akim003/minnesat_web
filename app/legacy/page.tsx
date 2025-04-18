@@ -29,7 +29,7 @@ const pastProjects = [
     id: "2022",
     title: "CanSat 2022 Project",
     description: "Our prototype design that laid the groundwork for the MinneSat team's formation.",
-    imageUrl: "/legacy/CanSat2022_Icon.jpg",
+    imageUrl: "/legacy/CanSat2022_Icon.jpeg",
     year: "2022",
   },
 ]
