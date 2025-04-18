@@ -124,8 +124,7 @@ export default function LegacyPage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      {/* Reduced opacity of the gradient overlay from black/60 to black/30 */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                      {/* Removed gradient overlay */}
                     </div>
                     <div className="p-6">
                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>

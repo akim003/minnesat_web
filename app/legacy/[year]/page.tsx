@@ -16,6 +16,15 @@ const pastProjects = [
     year: "2025",
     teamMembers: ["Emma Johnson", "Michael Chen", "Sophia Rodriguez", "James Wilson"],
     achievements: ["Competition in progress", "Best Technical Design (Preliminary Round)", "Innovation Award Nominee"],
+    // Gallery images for each project
+    gallery: [
+      { url: "/legacy/2025/gallery1.jpg", alt: "CanSat 2025 Assembly" },
+      { url: "/legacy/2025/gallery2.jpg", alt: "Navigation System Testing" },
+      { url: "/legacy/2025/gallery3.jpg", alt: "Team Working on Electronics" },
+      { url: "/legacy/2025/gallery4.jpg", alt: "Software Development Session" },
+      { url: "/legacy/2025/gallery5.jpg", alt: "Field Testing" },
+      { url: "/legacy/2025/gallery6.jpg", alt: "Final Design Presentation" },
+    ],
   },
   {
     id: "2024",
@@ -28,6 +37,15 @@ const pastProjects = [
     year: "2024",
     teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
     achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
+    // Gallery images for each project
+    gallery: [
+      { url: "/legacy/2024/gallery1.jpg", alt: "CanSat 2024 Design" },
+      { url: "/legacy/2024/gallery2.jpg", alt: "PCB Assembly" },
+      { url: "/legacy/2024/gallery3.jpg", alt: "Deployment System Test" },
+      { url: "/legacy/2024/gallery4.jpg", alt: "Team at Competition" },
+      { url: "/legacy/2024/gallery5.jpg", alt: "Data Collection System" },
+      { url: "/legacy/2024/gallery6.jpg", alt: "Award Ceremony" },
+    ],
   },
   {
     id: "2023",
@@ -40,6 +58,15 @@ const pastProjects = [
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
+    // Gallery images for each project
+    gallery: [
+      { url: "/legacy/2023/gallery1.jpg", alt: "CanSat 2023 Prototype" },
+      { url: "/legacy/2023/gallery2.jpg", alt: "Parachute Deployment Test" },
+      { url: "/legacy/2023/gallery3.jpg", alt: "Sensor Calibration" },
+      { url: "/legacy/2023/gallery4.jpg", alt: "Team Working on Project" },
+      { url: "/legacy/2023/gallery5.jpg", alt: "Launch Preparation" },
+      { url: "/legacy/2023/gallery6.jpg", alt: "Data Analysis Session" },
+    ],
   },
   {
     id: "2022",
@@ -52,6 +79,15 @@ const pastProjects = [
     year: "2022",
     teamMembers: ["Robert Taylor", "Lisa Chang", "Marcus Peterson", "Aisha Patel"],
     achievements: ["University Innovation Grant", "Engineering Department Recognition", "Successful Test Launch"],
+    // Gallery images for each project
+    gallery: [
+      { url: "/legacy/2022/gallery1.jpg", alt: "Initial CanSat Concept" },
+      { url: "/legacy/2022/gallery2.jpg", alt: "First Team Meeting" },
+      { url: "/legacy/2022/gallery3.jpg", alt: "Component Selection" },
+      { url: "/legacy/2022/gallery4.jpg", alt: "Early Prototype" },
+      { url: "/legacy/2022/gallery5.jpg", alt: "Test Flight Preparation" },
+      { url: "/legacy/2022/gallery6.jpg", alt: "Faculty Presentation" },
+    ],
   },
 ]
 
@@ -168,8 +204,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <div className="grid gap-12 lg:grid-cols-2 items-start">
               <div className="relative h-[500px] overflow-hidden rounded-2xl border border-white/10">
                 <Image src={project.imageUrl || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                {/* Reduced opacity of the gradient overlay from black/40 to black/20 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                {/* Removed gradient overlay */}
               </div>
 
               <div>
@@ -239,19 +274,50 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
 
             <div className="mt-16">
               <h3 className="text-2xl font-bold mb-6 text-center">Project Gallery</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10">
-                    <Image
-                      src={`/earth-orbit-blueprint.png?height=300&width=400&query=cansat project image ${project.year} ${i}`}
-                      alt={`Project image ${i}`}
-                      fill
-                      className="object-cover"
-                    />
-                    {/* Reduced the opacity of the gallery image overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent hover:opacity-0 transition-opacity"></div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {project.gallery
+                  ? // If project has gallery images, use those
+                    project.gallery.map((image, i) => (
+                      <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
+                        <Image
+                          src={
+                            image.url ||
+                            `/placeholder.svg?height=300&width=400&query=cansat project image ${project.year} ${i + 1}`
+                          }
+                          alt={image.alt || `Project image ${i + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* No gradient overlay */}
+                      </div>
+                    ))
+                  : // Fallback to placeholder images if no gallery is defined
+                    Array.from({ length: 6 }).map((_, i) => (
+                      <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
+                        <Image
+                          src={`/placeholder.svg?key=lydov&height=300&width=400&query=cansat project image ${project.year} ${i + 1}`}
+                          alt={`Project image ${i + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* No gradient overlay */}
+                      </div>
+                    ))}
+              </div>
+
+              {/* Instructions for developers */}
+              <div className="mt-8 p-4 border border-dashed border-white/20 rounded-lg bg-zinc-900/50">
+                <h4 className="text-lg font-semibold mb-2 text-gold">Developer Note:</h4>
+                <p className="text-white/70 mb-2">
+                  To add custom gallery images for this project, update the{" "}
+                  <code className="bg-black/30 px-1 py-0.5 rounded">gallery</code> array in the{" "}
+                  <code className="bg-black/30 px-1 py-0.5 rounded">pastProjects</code> data for year {project.year}.
+                </p>
+                <p className="text-white/70">
+                  Each gallery item should have a <code className="bg-black/30 px-1 py-0.5 rounded">url</code> and{" "}
+                  <code className="bg-black/30 px-1 py-0.5 rounded">alt</code> property. Place images in{" "}
+                  <code className="bg-black/30 px-1 py-0.5 rounded">/public/legacy/{project.year}/</code> directory.
+                </p>
               </div>
             </div>
           </div>
