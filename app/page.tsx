@@ -29,13 +29,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/favicon.jpg"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -220,7 +214,7 @@ export default function Home() {
                         src={project.imageUrl || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="project-image transition-transform duration-500 group-hover:scale-105"
                       />
                       {/* Reduced opacity of the gradient overlay from black/60 to black/30 */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
@@ -395,11 +389,11 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/orbiting-communication.png"
+                  src="/favicon.jpg"
                   alt="MinneSat Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10"
+                  className="h-10 w-10 rounded-full"
                 />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>

@@ -47,13 +47,7 @@ export default function LegacyPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/orbiting-communication.png"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -122,7 +116,7 @@ export default function LegacyPage() {
                         src={project.imageUrl || "/placeholder.svg?height=600&width=800&query=satellite project cansat"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="project-image transition-transform duration-500 group-hover:scale-105"
                       />
                       {/* Removed gradient overlay */}
                     </div>
@@ -146,11 +140,11 @@ export default function LegacyPage() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/orbiting-communication.png"
+                  src="/favicon.jpg"
                   alt="MinneSat Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10"
+                  className="h-10 w-10 rounded-full"
                 />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>

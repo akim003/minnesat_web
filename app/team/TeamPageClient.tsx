@@ -51,13 +51,7 @@ export default function TeamPageClient() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/orbiting-communication.png"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -175,11 +169,11 @@ export default function TeamPageClient() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/orbiting-communication.png"
+                  src="/favicon.jpg"
                   alt="MinneSat Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10"
+                  className="h-10 w-10 rounded-full"
                 />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>

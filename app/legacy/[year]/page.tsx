@@ -35,7 +35,18 @@ const pastProjects = [
       "Our team delivered a strong showing at the 2024 CanSat Competition, successfully completing the mission and placing 13th overall out of dozens of international teams. Our headshield deployment worked well, ensuring a stable descent and safe payload delivery. The mission objectives were executed as planned, reflecting the team’s dedication to reliable engineering and thorough testing.",
     imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
-    teamMembers: ["Ethan Kolby", "Alex Kim", "Marty Michelli", "Andrew Soltis", "Cole Harcey", "Andrew Stotz", "Franklin Woolley", "Shea Larson", "John Kronkvist","Elliot Zimpfer"],
+    teamMembers: [
+      "Ethan Kolby",
+      "Alex Kim",
+      "Marty Michelli",
+      "Andrew Soltis",
+      "Cole Harcey",
+      "Andrew Stotz",
+      "Franklin Woolley",
+      "Shea Larson",
+      "John Kronkvist",
+      "Elliot Zimpfer",
+    ],
     achievements: ["13th Place Overall", "Payload Delivered Intact"],
     // Gallery images for each project
     gallery: [
@@ -126,13 +137,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/orbiting-communication.png"
-                alt="MinneSat Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
+              <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -203,7 +208,12 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
 
             <div className="grid gap-12 lg:grid-cols-2 items-start">
               <div className="relative h-[500px] overflow-hidden rounded-2xl border border-white/10">
-                <Image src={project.imageUrl || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+                <Image
+                  src={project.imageUrl || "/placeholder.svg"}
+                  alt={project.title}
+                  fill
+                  className="project-image"
+                />
                 {/* Removed gradient overlay */}
               </div>
 
@@ -282,11 +292,11 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                         <Image
                           src={
                             image.url ||
-                            `/placeholder.svg?height=300&width=400&query=cansat project image ${project.year} ${i + 1}`
+                            `/placeholder.svg?height=300&width=400&query=cansat project image ${project.year || "/placeholder.svg"} ${i + 1}`
                           }
                           alt={image.alt || `Project image ${i + 1}`}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="gallery-image"
                         />
                         {/* No gradient overlay */}
                       </div>
@@ -295,10 +305,10 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                     Array.from({ length: 6 }).map((_, i) => (
                       <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
                         <Image
-                          src={`/placeholder.svg?key=lydov&height=300&width=400&query=cansat project image ${project.year} ${i + 1}`}
+                          src={`/placeholder.svg?key=zbhwz&key=lydov&height=300&width=400&query=cansat project image ${project.year} ${i + 1}`}
                           alt={`Project image ${i + 1}`}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="gallery-image"
                         />
                         {/* No gradient overlay */}
                       </div>
@@ -316,11 +326,11 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/orbiting-communication.png"
+                  src="/favicon.jpg"
                   alt="MinneSat Logo"
                   width={40}
                   height={40}
-                  className="h-10 w-10"
+                  className="h-10 w-10 rounded-full"
                 />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>

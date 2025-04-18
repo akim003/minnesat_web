@@ -143,3 +143,19 @@ html {
 .focus\:ring-gold:focus {
   --tw-ring-color: #ffcd00;
 }
+
+/* Project and gallery image consistency */
+.project-image {
+  filter: brightness(0.85) contrast(1.1);
+  object-fit: cover;
+}
+
+.gallery-image {
+  filter: brightness(0.85) contrast(1.1);
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
