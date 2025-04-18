@@ -12,7 +12,7 @@ const pastProjects = [
     description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
     fullDescription:
       "The 2025 MinneSat team developed our most advanced CanSat to date, featuring a sophisticated autonomous navigation system capable of precise landing control. The system incorporates machine learning algorithms for terrain recognition and advanced sensor fusion for optimal flight path determination.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/earth-orbit-blueprint.png",
     year: "2025",
     teamMembers: ["Emma Johnson", "Michael Chen", "Sophia Rodriguez", "James Wilson"],
     achievements: ["Competition in progress", "Best Technical Design (Preliminary Round)", "Innovation Award Nominee"],
@@ -24,7 +24,7 @@ const pastProjects = [
     description: "Award-winning design with innovative sensor array and data collection capabilities.",
     fullDescription:
       "Our 2024 CanSat featured a revolutionary multi-stage deployment system that allowed for extended data collection during descent. The team implemented a custom PCB design with integrated environmental sensors and a robust telemetry system that maintained connection throughout the mission.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/earth-orbit-blueprint.png",
     year: "2024",
     teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
     achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
@@ -36,7 +36,7 @@ const pastProjects = [
     description: "Our first competition entry that established the foundation for future MinneSat designs.",
     fullDescription:
       "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
-    imageUrl: "/shared/logo.png",
+    imageUrl: "/earth-orbit-blueprint.png",
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
@@ -78,7 +78,13 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+              <Image
+                src="/orbiting-communication.png"
+                alt="MinneSat Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -149,7 +155,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
 
             <div className="grid gap-12 lg:grid-cols-2 items-start">
               <div className="relative h-[500px] overflow-hidden rounded-2xl border border-white/10">
-                <Image src={`/legacy/project-${project.year}.png`} alt={project.title} fill className="object-cover" />
+                <Image src={project.imageUrl || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
               </div>
 
@@ -224,7 +230,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10">
                     <Image
-                      src={`/legacy/gallery-image-${i}.png`}
+                      src={`/earth-orbit-blueprint.png?height=300&width=400&query=cansat project image ${project.year} ${i}`}
                       alt={`Project image ${i}`}
                       fill
                       className="object-cover"
@@ -243,7 +249,13 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+                <Image
+                  src="/orbiting-communication.png"
+                  alt="MinneSat Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
+                />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>
               <p className="text-white/60 max-w-xs">

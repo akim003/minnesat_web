@@ -10,35 +10,35 @@ const leadershipTeam = [
     name: "Alex Johnson",
     position: "President",
     description: "Oversees all club operations and represents MinneSat at university and competition events.",
-    imageUrl: "/team/president.png",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 1",
     email: "ajohnson@umn.edu",
   },
   {
     name: "Sarah Chen",
     position: "Software Lead",
     description: "Manages the software development team and oversees all programming aspects of our CanSat projects.",
-    imageUrl: "/team/software-lead.png",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 2",
     email: "schen@umn.edu",
   },
   {
     name: "Michael Rodriguez",
     position: "Mechanical Lead",
     description: "Leads the mechanical design and manufacturing of our CanSat structures and deployment systems.",
-    imageUrl: "/team/mechanical-lead.png",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 3",
     email: "mrodriguez@umn.edu",
   },
   {
     name: "Emma Wilson",
     position: "Electrical Lead",
     description: "Directs the electrical engineering team responsible for PCB design, sensors, and power systems.",
-    imageUrl: "/team/electrical-lead.png",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 4",
     email: "ewilson@umn.edu",
   },
   {
     name: "David Park",
     position: "Treasurer",
     description: "Manages the club's finances, budget planning, and coordinates with university financial services.",
-    imageUrl: "/team/treasurer.png",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 5",
     email: "dpark@umn.edu",
   },
 ]
@@ -51,7 +51,13 @@ export default function TeamPageClient() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+              <Image
+                src="/orbiting-communication.png"
+                alt="MinneSat Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </Link>
           </div>
@@ -120,11 +126,7 @@ export default function TeamPageClient() {
                       <div className="flex-1 flex flex-col items-center">
                         <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-zinc-700 mx-auto mb-4">
                           <Image
-                            src={
-                              leader.imageUrl
-                                ? leader.imageUrl
-                                : "/placeholder.svg?height=300&width=300&query=team profile photo"
-                            }
+                            src={leader.imageUrl || "/placeholder.svg"}
                             alt={leader.name}
                             fill
                             className="object-cover"
@@ -172,7 +174,13 @@ export default function TeamPageClient() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/shared/logo.png" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10" />
+                <Image
+                  src="/orbiting-communication.png"
+                  alt="MinneSat Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
+                />
                 <span className="text-xl font-bold tracking-tight">MinneSat</span>
               </div>
               <p className="text-white/60 max-w-xs">

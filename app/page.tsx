@@ -9,56 +9,16 @@ const legacyProjects = [
     id: "2025",
     title: "CanSat 2025 Project",
     description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
-    imageUrl: "/legacy/project-2025.png",
+    imageUrl: "/earth-orbit-blueprint.png",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
     description: "Award-winning design with innovative sensor array and data collection capabilities.",
-    imageUrl: "/legacy/project-2024.png",
+    imageUrl: "/earth-orbit-blueprint.png",
     year: "2024",
   },
-]
-
-// Team member data
-const teamMembers = [
-  {
-    name: "Team Member 1",
-    role: "Software Lead",
-    description: "Responsible for developing the flight software and telemetry systems.",
-    imageUrl: "/diverse-team-portraits.png",
-  },
-  {
-    name: "Team Member 2",
-    role: "Mechanical Lead",
-    description: "Designs and builds the structural components of our CanSat projects.",
-    imageUrl: "/diverse-team-portraits.png",
-  },
-  {
-    name: "Team Member 3",
-    role: "Electrical Lead",
-    description: "Develops the power systems and sensor integration for our projects.",
-    imageUrl: "/diverse-team-portraits.png",
-  },
-  {
-    name: "Team Member 4",
-    role: "Project Manager",
-    description: "Coordinates team efforts and ensures project milestones are met.",
-    imageUrl: "/diverse-team-portraits.png",
-  },
-]
-
-// Sponsor data
-const sponsors = [
-  { name: "Sponsor 1", imageUrl: "/soaring-skyline-logo.png" },
-  { name: "Sponsor 2", imageUrl: "/abstract-tech-logo.png" },
-  { name: "Sponsor 3", imageUrl: "/interconnected-gears-logo.png" },
-  { name: "Sponsor 4", imageUrl: "/abstract-department-logo.png" },
-  { name: "Sponsor 5", imageUrl: "/placeholder.svg?height=150&width=250&query=manufacturing company logo" },
-  { name: "Sponsor 6", imageUrl: "/placeholder.svg?height=150&width=250&query=electronics company logo" },
-  { name: "Sponsor 7", imageUrl: "/placeholder.svg?height=150&width=250&query=research institute logo" },
-  { name: "Sponsor 8", imageUrl: "/placeholder.svg?height=150&width=250&query=space technology logo" },
 ]
 
 export default function Home() {
@@ -70,7 +30,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/placeholder.svg?height=40&width=40&query=minnesat logo"
+                src="/orbiting-communication.png"
                 alt="MinneSat Logo"
                 width={40}
                 height={40}
@@ -124,7 +84,7 @@ export default function Home() {
         <section className="relative h-[100vh] overflow-hidden bg-black">
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black z-10"></div>
           <Image
-            src="/placeholder.svg?height=1080&width=1920&query=satellite launch night sky"
+            src="/night-launch-ascent.png"
             alt="CanSat Launch"
             width={1920}
             height={1080}
@@ -185,12 +145,7 @@ export default function Home() {
               </div>
               <div className="relative h-[400px] overflow-hidden rounded-2xl border border-white/10">
                 <div className="absolute inset-0 bg-gradient-to-tr from-maroon/20 to-gold/10 mix-blend-overlay z-10"></div>
-                <Image
-                  src="/placeholder.svg?height=800&width=1200&query=engineering team working on satellite"
-                  alt="Team Working on Project"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/satellite-builders.png" alt="Team Working on Project" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -209,7 +164,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, i) => (
+              {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="group">
                   <div className="relative h-[350px] overflow-hidden rounded-2xl bg-zinc-800 p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-maroon/5 border border-white/10">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
@@ -217,17 +172,19 @@ export default function Home() {
                       <div className="flex-1">
                         <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-zinc-700 mx-auto">
                           <Image
-                            src={member.imageUrl || "/placeholder.svg"}
-                            alt={member.name}
+                            src={`/focused-engineer.png?key=q27iz&key=dekrr&height=300&width=300&query=engineering student portrait ${i}`}
+                            alt={`Team Member ${i}`}
                             fill
                             className="object-cover"
                           />
                         </div>
                       </div>
                       <div className="mt-auto">
-                        <h3 className="text-xl font-bold">{member.name}</h3>
-                        <p className="text-gold font-medium">{member.role}</p>
-                        <p className="text-white/60 text-sm mt-2">{member.description}</p>
+                        <h3 className="text-xl font-bold">Team Member Name</h3>
+                        <p className="text-gold font-medium">Position / Role</p>
+                        <p className="text-white/60 text-sm mt-2">
+                          Brief description about the team member and their contribution to the project.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -260,7 +217,7 @@ export default function Home() {
                   <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 transition-all duration-300 hover:shadow-xl hover:shadow-maroon/10">
                     <div className="relative h-80 w-full overflow-hidden">
                       <Image
-                        src="/placeholder.svg?height=600&width=800&query=satellite project cansat"
+                        src={project.imageUrl || "/placeholder.svg"}
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -301,14 +258,14 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {sponsors.map((sponsor, i) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <div
                   key={i}
                   className="flex items-center justify-center p-6 bg-zinc-800/50 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-gold/30 transition-all duration-300"
                 >
                   <Image
-                    src={sponsor.imageUrl || "/placeholder.svg"}
-                    alt={sponsor.name}
+                    src={`/abstract-tech-logo.png?height=150&width=250&query=tech company logo ${i}`}
+                    alt={`Sponsor ${i}`}
                     width={150}
                     height={80}
                     className="max-h-16 w-auto opacity-70 hover:opacity-100 transition-all"
@@ -437,7 +394,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  src="/placeholder.svg?height=40&width=40&query=minnesat logo"
+                  src="/orbiting-communication.png"
                   alt="MinneSat Logo"
                   width={40}
                   height={40}
