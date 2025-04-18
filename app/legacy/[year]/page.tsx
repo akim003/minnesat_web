@@ -3,55 +3,43 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
 
-// Sample past projects data
+// Updated past projects data for 2023, 2024, and 2025
 const pastProjects = [
   {
-    id: "2023",
-    title: "CanSat 2023 Project",
-    fullTitle: "Atmospheric Data Collection System",
-    description: "Brief description of the project, its goals, and achievements.",
+    id: "2025",
+    title: "2025 CanSat Competition",
+    fullTitle: "Advanced Autonomous Navigation System",
+    description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
     fullDescription:
-      "Our 2023 CanSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities.",
+      "The 2025 MinneSat team developed our most advanced CanSat to date, featuring a sophisticated autonomous navigation system capable of precise landing control. The system incorporates machine learning algorithms for terrain recognition and advanced sensor fusion for optimal flight path determination.",
+    imageUrl: "/earth-orbit-blueprint.png",
+    year: "2025",
+    teamMembers: ["Emma Johnson", "Michael Chen", "Sophia Rodriguez", "James Wilson"],
+    achievements: ["Competition in progress", "Best Technical Design (Preliminary Round)", "Innovation Award Nominee"],
+  },
+  {
+    id: "2024",
+    title: "2024 CanSat Competition",
+    fullTitle: "Multi-Stage Deployment System",
+    description: "Award-winning design with innovative sensor array and data collection capabilities.",
+    fullDescription:
+      "Our 2024 CanSat featured a revolutionary multi-stage deployment system that allowed for extended data collection during descent. The team implemented a custom PCB design with integrated environmental sensors and a robust telemetry system that maintained connection throughout the mission.",
+    imageUrl: "/earth-orbit-blueprint.png",
+    year: "2024",
+    teamMembers: ["David Miller", "Sarah Adams", "Thomas Walker", "Olivia Martinez"],
+    achievements: ["2nd Place Overall", "Best Mechanical Design", "Most Reliable Communication System"],
+  },
+  {
+    id: "2023",
+    title: "2023 CanSat Competition",
+    fullTitle: "Atmospheric Data Collection System",
+    description: "Our first competition entry that established the foundation for future MinneSat designs.",
+    fullDescription:
+      "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
     imageUrl: "/earth-orbit-blueprint.png",
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
-  },
-  {
-    id: "2022",
-    title: "CanSat 2022 Project",
-    fullTitle: "Multi-Stage Deployment System",
-    description: "Brief description of the project, its goals, and achievements.",
-    fullDescription:
-      "The 2022 MinneSat team developed a multi-stage deployment system with autonomous landing capabilities. Our CanSat featured advanced sensors for environmental monitoring and a robust communication system for real-time data analysis.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2022",
-    teamMembers: ["Robert Brown", "Emily Clark", "Michael Lee", "Sarah Adams"],
-    achievements: ["2nd Place Overall", "Best Mechanical Design", "Innovation Award"],
-  },
-  {
-    id: "2021",
-    title: "CanSat 2021 Project",
-    fullTitle: "Precision Landing System",
-    description: "Brief description of the project, its goals, and achievements.",
-    fullDescription:
-      "In 2021, our team focused on developing a precision landing system with advanced navigation algorithms. The CanSat incorporated custom-designed circuit boards, multiple redundant systems, and achieved exceptional accuracy in landing zone targeting.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2021",
-    teamMembers: ["David Miller", "Sophia Chen", "James Wilson", "Emma Garcia"],
-    achievements: ["Honorable Mention", "Best Software Implementation", "Most Reliable System"],
-  },
-  {
-    id: "2020",
-    title: "CanSat 2020 Project",
-    fullTitle: "Modular Sensor Array",
-    description: "Brief description of the project, its goals, and achievements.",
-    fullDescription:
-      "The 2020 MinneSat CanSat featured a modular sensor array design that could be easily reconfigured for different mission parameters. Despite the challenges of remote collaboration during the pandemic, the team delivered an innovative system with excellent telemetry capabilities.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2020",
-    teamMembers: ["Thomas Walker", "Olivia Martinez", "Daniel Kim", "Hannah Taylor"],
-    achievements: ["4th Place Overall", "Best Documentation", "Team Spirit Award"],
   },
 ]
 
@@ -104,16 +92,16 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <Link href="/#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               About
             </Link>
-            <Link href="/#team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Team
             </Link>
-            <Link href="/legacy" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/legacy" className="text-sm font-medium text-gold hover:text-gold transition-colors">
               Legacy
             </Link>
-            <Link href="/#sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Sponsors
             </Link>
-            <Link href="/#contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Contact
             </Link>
             <Button className="bg-maroon hover:bg-maroon/90">Join Us</Button>
@@ -242,7 +230,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10">
                     <Image
-                      src={`/earth-orbit-blueprint.png?height=300&width=400&query=cansat project image ${i}`}
+                      src={`/earth-orbit-blueprint.png?height=300&width=400&query=cansat project image ${project.year} ${i}`}
                       alt={`Project image ${i}`}
                       fill
                       className="object-cover"
@@ -283,7 +271,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#team" className="text-white/60 hover:text-gold transition-colors">
+                  <Link href="/team" className="text-white/60 hover:text-gold transition-colors">
                     Our Team
                   </Link>
                 </li>
@@ -293,12 +281,12 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#sponsors" className="text-white/60 hover:text-gold transition-colors">
+                  <Link href="/sponsors" className="text-white/60 hover:text-gold transition-colors">
                     Sponsors
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-white/60 hover:text-gold transition-colors">
+                  <Link href="/contact" className="text-white/60 hover:text-gold transition-colors">
                     Contact
                   </Link>
                 </li>

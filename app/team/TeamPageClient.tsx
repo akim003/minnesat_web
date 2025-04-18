@@ -1,38 +1,49 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-// Updated past projects data for 2023, 2024, and 2025
-const pastProjects = [
+// Team leadership data
+const leadershipTeam = [
   {
-    id: "2025",
-    title: "CanSat 2025 Project",
-    description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2025",
+    name: "Alex Johnson",
+    position: "President",
+    description: "Oversees all club operations and represents MinneSat at university and competition events.",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 1",
+    email: "ajohnson@umn.edu",
   },
   {
-    id: "2024",
-    title: "CanSat 2024 Project",
-    description: "Award-winning design with innovative sensor array and data collection capabilities.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2024",
+    name: "Sarah Chen",
+    position: "Software Lead",
+    description: "Manages the software development team and oversees all programming aspects of our CanSat projects.",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 2",
+    email: "schen@umn.edu",
   },
   {
-    id: "2023",
-    title: "CanSat 2023 Project",
-    description: "Our first competition entry that established the foundation for future MinneSat designs.",
-    imageUrl: "/earth-orbit-blueprint.png",
-    year: "2023",
+    name: "Michael Rodriguez",
+    position: "Mechanical Lead",
+    description: "Leads the mechanical design and manufacturing of our CanSat structures and deployment systems.",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 3",
+    email: "mrodriguez@umn.edu",
+  },
+  {
+    name: "Emma Wilson",
+    position: "Electrical Lead",
+    description: "Directs the electrical engineering team responsible for PCB design, sensors, and power systems.",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 4",
+    email: "ewilson@umn.edu",
+  },
+  {
+    name: "David Park",
+    position: "Treasurer",
+    description: "Manages the club's finances, budget planning, and coordinates with university financial services.",
+    imageUrl: "/focused-engineer.png?key=q27iz&height=300&width=300&query=engineering student portrait 5",
+    email: "dpark@umn.edu",
   },
 ]
 
-export const metadata = {
-  title: "MinneSat - Legacy Projects",
-  description: "Past CanSat competition projects by the University of Minnesota MinneSat team",
-}
-
-export default function LegacyPage() {
+export default function TeamPageClient() {
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
       {/* Header */}
@@ -54,10 +65,10 @@ export default function LegacyPage() {
             <Link href="/#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               About
             </Link>
-            <Link href="/team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/team" className="text-sm font-medium text-gold hover:text-gold transition-colors">
               Team
             </Link>
-            <Link href="/legacy" className="text-sm font-medium text-gold hover:text-gold transition-colors">
+            <Link href="/legacy" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Legacy
             </Link>
             <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
@@ -95,38 +106,63 @@ export default function LegacyPage() {
         <section className="relative py-24 bg-black">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center mb-16">
-              <div className="inline-block rounded-full bg-maroon/20 px-3 py-1 text-sm text-maroon mb-4">
-                Our History
+              <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-sm text-gold mb-4">
+                Our Leadership
               </div>
-              <h1 className="text-4xl font-bold tracking-tight mb-4">Legacy Projects</h1>
+              <h1 className="text-4xl font-bold tracking-tight mb-4">Meet Our Team</h1>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="max-w-3xl text-white/70">
-                Explore our CanSat competition projects from 2023 to 2025, showcasing our team's innovation and
-                engineering excellence.
+                Our leadership team brings together diverse skills and expertise to guide MinneSat through design,
+                development, and competition.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pastProjects.map((project) => (
-                <Link href={`/legacy/${project.id}`} key={project.id} className="group">
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 transition-all duration-300 hover:border-gold/30 hover:shadow-xl hover:shadow-maroon/10">
-                    <div className="relative h-80 w-full overflow-hidden">
-                      <Image
-                        src={project.imageUrl || "/placeholder.svg?height=600&width=800&query=satellite project cansat"}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                      <p className="mb-4 text-white/70">{project.description}</p>
-                      <Button className="bg-gold hover:bg-gold/90 text-black rounded-full">View Project</Button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {leadershipTeam.map((leader, index) => (
+                <div key={index} className="group">
+                  <div className="relative h-[400px] overflow-hidden rounded-2xl bg-zinc-800 p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-maroon/5 border border-white/10">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
+                    <div className="relative z-20 flex h-full flex-col">
+                      <div className="flex-1 flex flex-col items-center">
+                        <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-zinc-700 mx-auto mb-4">
+                          <Image
+                            src={leader.imageUrl || "/placeholder.svg"}
+                            alt={leader.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <h3 className="text-2xl font-bold text-center">{leader.name}</h3>
+                        <p className="text-gold font-medium text-center mt-1">{leader.position}</p>
+                      </div>
+                      <div className="mt-auto">
+                        <p className="text-white/70 text-sm mb-4">{leader.description}</p>
+                        <Button
+                          variant="outline"
+                          className="w-full border-gold/30 text-gold hover:bg-gold/10"
+                          onClick={() => (window.location.href = `mailto:${leader.email}`)}
+                        >
+                          Contact
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <h2 className="text-2xl font-bold mb-4">Join Our Team</h2>
+              <p className="max-w-2xl mx-auto text-white/70 mb-6">
+                Interested in becoming part of MinneSat? We're always looking for passionate students to join our team
+                and contribute to our CanSat projects.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">Apply Now</Button>
+                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8">
+                  Learn About Roles
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -175,7 +211,7 @@ export default function LegacyPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-white/60 hover:text-gold transition-colors">
+                  <Link href="/contact" className="text-white/60 hover:text-gold transition-colors">
                     Contact
                   </Link>
                 </li>

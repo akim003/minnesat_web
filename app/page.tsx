@@ -3,6 +3,24 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronDown, Instagram, Linkedin, Mail, Twitter } from "lucide-react"
 
+// Sample legacy projects data for the homepage preview
+const legacyProjects = [
+  {
+    id: "2025",
+    title: "CanSat 2025 Project",
+    description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
+    imageUrl: "/earth-orbit-blueprint.png",
+    year: "2025",
+  },
+  {
+    id: "2024",
+    title: "CanSat 2024 Project",
+    description: "Award-winning design with innovative sensor array and data collection capabilities.",
+    imageUrl: "/earth-orbit-blueprint.png",
+    year: "2024",
+  },
+]
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
@@ -25,16 +43,16 @@ export default function Home() {
             <Link href="#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               About
             </Link>
-            <Link href="#team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Team
             </Link>
             <Link href="/legacy" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Legacy
             </Link>
-            <Link href="#sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Sponsors
             </Link>
-            <Link href="#contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+            <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Contact
             </Link>
             <Button className="bg-maroon hover:bg-maroon/90">Join Us</Button>
@@ -181,45 +199,47 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Legacy Section */}
         <section id="current-projects" className="py-24 bg-black">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center mb-16">
-              <div className="inline-block rounded-full bg-maroon/20 px-3 py-1 text-sm text-maroon mb-4">
-                Our History
-              </div>
+              <div className="inline-block rounded-full bg-maroon/20 px-3 py-1 text-sm text-maroon mb-4">Legacy</div>
               <h2 className="text-3xl font-bold tracking-tight mb-4">Our Legacy</h2>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="max-w-3xl text-white/70">
-                Explore our past CanSat competition projects, from concept to launch.
+                Explore our CanSat competition projects from 2023 to 2025, showcasing our team's innovation and
+                engineering excellence.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 transition-all duration-300 hover:shadow-xl hover:shadow-maroon/10"
-                >
-                  <div className="relative h-80 w-full overflow-hidden">
-                    <Image
-                      src={`/earth-orbit-blueprint.png?height=600&width=800&query=satellite project ${i}`}
-                      alt={`Project ${i}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+              {legacyProjects.map((project) => (
+                <Link href={`/legacy/${project.id}`} key={project.id} className="group">
+                  <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 transition-all duration-300 hover:shadow-xl hover:shadow-maroon/10">
+                    <div className="relative h-80 w-full overflow-hidden">
+                      <Image
+                        src={project.imageUrl || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                      <p className="mb-4 text-white/70">{project.description}</p>
+                      <Button className="bg-gold hover:bg-gold/90 text-black rounded-full">View Project</Button>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-2">CanSat 2023 Project</h3>
-                    <p className="mb-4 text-white/70">Brief description of the project, its goals, and achievements.</p>
-                    <Button className="bg-gold hover:bg-gold/90 text-black rounded-full">View Project</Button>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="border-maroon/50 text-maroon hover:bg-maroon/10 rounded-full px-8">
-                View All Projects
+              <Button
+                asChild
+                variant="outline"
+                className="border-maroon/50 text-maroon hover:bg-maroon/10 rounded-full px-8"
+              >
+                <Link href="/legacy">View All Projects</Link>
               </Button>
             </div>
           </div>
@@ -395,13 +415,13 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#team" className="text-white/60 hover:text-gold transition-colors">
+                  <Link href="/team" className="text-white/60 hover:text-gold transition-colors">
                     Our Team
                   </Link>
                 </li>
                 <li>
                   <Link href="/legacy" className="text-white/60 hover:text-gold transition-colors">
-                    Legacy
+                    Legacy Projects
                   </Link>
                 </li>
                 <li>
