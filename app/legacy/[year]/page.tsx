@@ -39,12 +39,12 @@ const pastProjects = [
     achievements: ["13th Place Overall", "Payload Delivered Intact"],
     // Gallery images for each project
     gallery: [
-      { url: "/legacy/2024/gallery1.jpg", alt: "CanSat 2024 Design" },
-      { url: "/legacy/2024/gallery2.jpg", alt: "PCB Assembly" },
-      { url: "/legacy/2024/gallery3.jpg", alt: "Deployment System Test" },
-      { url: "/legacy/2024/gallery4.jpg", alt: "Team at Competition" },
-      { url: "/legacy/2024/gallery5.jpg", alt: "Data Collection System" },
-      { url: "/legacy/2024/gallery6.jpg", alt: "Award Ceremony" },
+      { url: "/legacy/2024/gallery_1.JPG", alt: "Award Ceremony" },
+      { url: "/legacy/2024/gallery_2.jpg", alt: "Launch" },
+      { url: "/legacy/2024/gallery_3.JPG", alt: "Compliance Testing" },
+      { url: "/legacy/2024/gallery_4.jpg", alt: "Luanch Prep" },
+      { url: "/legacy/2024/gallery_5.jpg", alt: "Photo with Korean Team" },
+      { url: "/legacy/2024/gallery_6.jpg", alt: "Post Launch" },
     ],
   },
   {
