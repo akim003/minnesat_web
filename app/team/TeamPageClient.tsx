@@ -62,11 +62,8 @@ export default function TeamPageClient() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              About
-            </Link>
             <Link href="/team" className="text-sm font-medium text-gold hover:text-gold transition-colors">
-              Team
+              The Team
             </Link>
             <Link href="/legacy" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Legacy
@@ -74,8 +71,11 @@ export default function TeamPageClient() {
             <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Sponsors
             </Link>
+            <Link href="/join" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+              Join
+            </Link>
             <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              Contact
+              Contact Us
             </Link>
             <Button className="bg-maroon hover:bg-maroon/90">Join Us</Button>
           </nav>

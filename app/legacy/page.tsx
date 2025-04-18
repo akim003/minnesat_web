@@ -25,6 +25,13 @@ const pastProjects = [
     imageUrl: "/legacy/CanSat2023_Icon.jpg",
     year: "2023",
   },
+  {
+    id: "2022",
+    title: "CanSat 2022 Project",
+    description: "Our prototype design that laid the groundwork for the MinneSat team's formation.",
+    imageUrl: "/legacy/CanSat2022_Icon.jpg",
+    year: "2022",
+  },
 ]
 
 export const metadata = {
@@ -51,11 +58,8 @@ export default function LegacyPage() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              About
-            </Link>
             <Link href="/team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              Team
+              The Team
             </Link>
             <Link href="/legacy" className="text-sm font-medium text-gold hover:text-gold transition-colors">
               Legacy
@@ -63,8 +67,11 @@ export default function LegacyPage() {
             <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Sponsors
             </Link>
+            <Link href="/join" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+              Join
+            </Link>
             <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              Contact
+              Contact Us
             </Link>
             <Button className="bg-maroon hover:bg-maroon/90">Join Us</Button>
           </nav>
@@ -101,7 +108,7 @@ export default function LegacyPage() {
               <h1 className="text-4xl font-bold tracking-tight mb-4">Legacy Projects</h1>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="max-w-3xl text-white/70">
-                Explore our CanSat competition projects from 2023 to 2025, showcasing our team's innovation and
+                Explore our CanSat competition projects from 2022 to 2025, showcasing our team's innovation and
                 engineering excellence.
               </p>
             </div>
@@ -117,7 +124,8 @@ export default function LegacyPage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                      {/* Reduced opacity of the gradient overlay from black/60 to black/30 */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>

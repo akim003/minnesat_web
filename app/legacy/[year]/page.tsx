@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
 
-// Updated past projects data for 2023, 2024, and 2025
+// Updated past projects data to include 2022
 const pastProjects = [
   {
     id: "2025",
@@ -40,6 +40,18 @@ const pastProjects = [
     year: "2023",
     teamMembers: ["Jane Doe", "John Smith", "Alex Johnson", "Sam Wilson"],
     achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
+  },
+  {
+    id: "2022",
+    title: "2022 CanSat Prototype",
+    fullTitle: "Initial Concept Development",
+    description: "Our prototype design that laid the groundwork for the MinneSat team's formation.",
+    fullDescription:
+      "In 2022, a small group of passionate engineering students at the University of Minnesota began developing the initial concept for what would become the MinneSat team. This prototype CanSat focused on basic functionality and proof of concept, featuring a simple sensor package and recovery system. Though not officially entered in competition, this project was crucial in establishing our team and securing initial funding and faculty support.",
+    imageUrl: "/legacy/CanSat2022_Icon.jpg",
+    year: "2022",
+    teamMembers: ["Robert Taylor", "Lisa Chang", "Marcus Peterson", "Aisha Patel"],
+    achievements: ["University Innovation Grant", "Engineering Department Recognition", "Successful Test Launch"],
   },
 ]
 
@@ -89,11 +101,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/#about" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              About
-            </Link>
             <Link href="/team" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              Team
+              The Team
             </Link>
             <Link href="/legacy" className="text-sm font-medium text-gold hover:text-gold transition-colors">
               Legacy
@@ -101,8 +110,11 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <Link href="/sponsors" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
               Sponsors
             </Link>
+            <Link href="/join" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
+              Join
+            </Link>
             <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-gold transition-colors">
-              Contact
+              Contact Us
             </Link>
             <Button className="bg-maroon hover:bg-maroon/90">Join Us</Button>
           </nav>
@@ -156,7 +168,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <div className="grid gap-12 lg:grid-cols-2 items-start">
               <div className="relative h-[500px] overflow-hidden rounded-2xl border border-white/10">
                 <Image src={project.imageUrl || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                {/* Reduced opacity of the gradient overlay from black/40 to black/20 */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
               </div>
 
               <div>
@@ -235,6 +248,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                       fill
                       className="object-cover"
                     />
+                    {/* Reduced the opacity of the gallery image overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent hover:opacity-0 transition-opacity"></div>
                   </div>
                 ))}
               </div>
