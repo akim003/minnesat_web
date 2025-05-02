@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, Medal, Trophy } from "lucide-react"
 import { Footer } from "@/components/footer"
@@ -66,6 +67,7 @@ export default function SponsorsClientPage() {
                 <Trophy className="h-8 w-8 text-gold" />
                 <h2 className="text-2xl font-bold">Gold Sponsors</h2>
               </div>
+              {/* Gold sponsors - 2 per row */}
               <SponsorDisplay sponsors={goldSponsors} />
             </div>
 
@@ -74,7 +76,79 @@ export default function SponsorsClientPage() {
                 <Medal className="h-8 w-8 text-zinc-300" />
                 <h2 className="text-2xl font-bold">Silver Sponsors</h2>
               </div>
-              <SponsorDisplay sponsors={silverSponsors} />
+              {/* Silver sponsors - 3 per row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {silverSponsors.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col p-6 bg-zinc-900 rounded-2xl border ${
+                      sponsor.isPlaceholder
+                        ? "border-zinc-300/30 border-dashed hover:border-zinc-300/70"
+                        : "border-zinc-300/30 hover:border-zinc-300/50"
+                    } transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 h-full`}
+                  >
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="relative h-16 w-40">
+                          {sponsor.isPlaceholder ? (
+                            <Image
+                              src="/sponsors/your-logo-here.png"
+                              alt="Your Logo Here"
+                              fill
+                              className="object-contain opacity-60"
+                            />
+                          ) : (
+                            <Image
+                              src={sponsor.imageUrl || "/placeholder.svg"}
+                              alt={sponsor.name}
+                              fill
+                              className="object-contain"
+                            />
+                          )}
+                        </div>
+                        <div className="rounded-full px-3 py-1 flex items-center gap-2 bg-zinc-300/10 text-zinc-300 border-zinc-300/30">
+                          <Medal className="h-6 w-6 text-zinc-300" />
+                          <span className="text-sm font-medium capitalize">Silver</span>
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-bold mb-2">{sponsor.name}</h3>
+                      <p className="text-white/70 mb-4">{sponsor.description}</p>
+                    </div>
+                    <div className="mt-auto pt-4">
+                      {sponsor.isPlaceholder ? (
+                        <Button className="bg-zinc-300 hover:bg-zinc-300/80 text-black w-full group">
+                          <Link href="/sponsors/info" className="flex items-center justify-center w-full">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="mr-2 h-4 w-4 group-hover:rotate-90 transition-transform duration-300"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5v14" />
+                            </svg>
+                            Sponsor Us
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="border-zinc-300/30 text-zinc-300 hover:bg-zinc-300/10 w-full"
+                          onClick={() => window.open(sponsor.website, "_blank")}
+                        >
+                          Visit Website
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -82,7 +156,79 @@ export default function SponsorsClientPage() {
                 <Award className="h-8 w-8 text-amber-700" />
                 <h2 className="text-2xl font-bold">Bronze Sponsors</h2>
               </div>
-              <SponsorDisplay sponsors={bronzeSponsors} />
+              {/* Bronze sponsors - 3 per row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {bronzeSponsors.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col p-6 bg-zinc-900 rounded-2xl border ${
+                      sponsor.isPlaceholder
+                        ? "border-amber-700/30 border-dashed hover:border-amber-700/70"
+                        : "border-amber-700/30 hover:border-amber-700/50"
+                    } transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 h-full`}
+                  >
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="relative h-16 w-40">
+                          {sponsor.isPlaceholder ? (
+                            <Image
+                              src="/sponsors/your-logo-here.png"
+                              alt="Your Logo Here"
+                              fill
+                              className="object-contain opacity-60"
+                            />
+                          ) : (
+                            <Image
+                              src={sponsor.imageUrl || "/placeholder.svg"}
+                              alt={sponsor.name}
+                              fill
+                              className="object-contain"
+                            />
+                          )}
+                        </div>
+                        <div className="rounded-full px-3 py-1 flex items-center gap-2 bg-amber-700/10 text-amber-700 border-amber-700/30">
+                          <Award className="h-6 w-6 text-amber-700" />
+                          <span className="text-sm font-medium capitalize">Bronze</span>
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-bold mb-2">{sponsor.name}</h3>
+                      <p className="text-white/70 mb-4">{sponsor.description}</p>
+                    </div>
+                    <div className="mt-auto pt-4">
+                      {sponsor.isPlaceholder ? (
+                        <Button className="bg-amber-700 hover:bg-amber-700/80 text-white w-full group">
+                          <Link href="/sponsors/info" className="flex items-center justify-center w-full">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="mr-2 h-4 w-4 group-hover:rotate-90 transition-transform duration-300"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5v14" />
+                            </svg>
+                            Sponsor Us
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="border-amber-700/30 text-amber-700 hover:bg-amber-700/10 w-full"
+                          onClick={() => window.open(sponsor.website, "_blank")}
+                        >
+                          Visit Website
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="mt-16 text-center">

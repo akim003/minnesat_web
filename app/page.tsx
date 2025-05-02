@@ -54,8 +54,7 @@ export default function Home() {
                   University of Minnesota
                 </div>
                 <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  <span className="block">MinneSat</span>
-                  <span className="mt-2 block text-gold">CanSat Team</span>
+                  <span className="block text-gold">CanSat Team</span>
                 </h1>
                 <p className="max-w-[700px] text-white/80 md:text-xl">
                   Designing, building, and launching space systems for the future
@@ -115,7 +114,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Team Section - Updated with background image */}
+        {/* Rest of the page content remains unchanged */}
+        {/* Team Section */}
         <section id="team" className="py-24 relative">
           {/* Background image */}
           <div className="absolute inset-0 z-0">
@@ -178,7 +178,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Legacy Section - Updated with new background image */}
+        {/* Legacy Section */}
         <section id="current-projects" className="py-24 relative">
           {/* Background image */}
           <div className="absolute inset-0 z-0">
@@ -240,7 +240,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sponsors Section - Updated with new background image */}
+        {/* Sponsors Section */}
         <section id="sponsors" className="py-24 relative">
           {/* Background image */}
           <div className="absolute inset-0 z-0">

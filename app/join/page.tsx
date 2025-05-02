@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
@@ -70,7 +69,7 @@ export default function JoinPage() {
                     <div>
                       <h3 className="font-semibold text-lg">Hands-on Experience</h3>
                       <p className="text-white/70">
-                        Gain practical experience designing, building, and testing real space systems.
+                        Gain practical experience designing, building, and testing real aerospace systems.
                       </p>
                     </div>
                   </li>
@@ -139,16 +138,16 @@ export default function JoinPage() {
                 <div className="bg-zinc-900 p-6 rounded-xl border border-white/10">
                   <h3 className="text-xl font-bold mb-2">Mechanical Team</h3>
                   <p className="text-white/70 mb-4">
-                    Design and build the physical structure, deployment mechanisms, and recovery systems.
+                    Design and build the physical structure, deployment mechanisms, and decent control systems.
                   </p>
-                  <p className="text-gold font-medium">Skills: CAD, 3D Printing, Materials Science</p>
+                  <p className="text-gold font-medium">Skills: CAD, 3D Printing, Iterative Prototyping</p>
                 </div>
                 <div className="bg-zinc-900 p-6 rounded-xl border border-white/10">
                   <h3 className="text-xl font-bold mb-2">Electrical Team</h3>
                   <p className="text-white/70 mb-4">
-                    Create PCB designs, sensor integration, and power management systems.
+                    Create satellite avionics, sensor integration, and power management systems.
                   </p>
-                  <p className="text-gold font-medium">Skills: Circuit Design, PCB Layout, Sensors</p>
+                  <p className="text-gold font-medium">Skills: PCB Design, Soldering, Sensors Testing</p>
                 </div>
               </div>
             </div>
@@ -184,9 +183,6 @@ export default function JoinPage() {
                   <h3 className="font-semibold mb-2">Start Contributing</h3>
                   <p className="text-white/70 text-sm">Begin working on the current CanSat project</p>
                 </div>
-              </div>
-              <div className="mt-8 text-center">
-                <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">Join Now</Button>
               </div>
             </div>
             <div className="mt-12">

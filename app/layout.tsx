@@ -8,6 +8,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "MinneSat - University of Minnesota CanSat Team",
   description: "University of Minnesota's CanSat team, designing and building space systems for the future.",
+  icons: {
+    icon: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  },
     generator: 'v0.dev'
 }
 

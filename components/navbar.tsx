@@ -1,17 +1,25 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Menu, X } from "lucide-react"
 
 export function Navbar() {
   const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Function to check if a link is active
   const isActive = (path: string) => {
     if (path === "/" && pathname === "/") return true
     if (path !== "/" && pathname.startsWith(path)) return true
     return false
+  }
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
   }
 
   return (
@@ -55,26 +63,53 @@ export function Navbar() {
             Contact Us
           </Link>
         </nav>
-        <button className="md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
-          >
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-          </svg>
-          <span className="sr-only">Toggle menu</span>
+        <button className="md:hidden" onClick={toggleMobileMenu} aria-label="Toggle menu">
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden">
+          <div className="flex flex-col space-y-4 px-4 py-6 bg-black/95 border-t border-white/10">
+            <Link
+              href="/team"
+              className={`text-base font-medium ${isActive("/team") ? "text-gold" : "text-white/70"} transition-colors`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              The Team
+            </Link>
+            <Link
+              href="/legacy"
+              className={`text-base font-medium ${isActive("/legacy") ? "text-gold" : "text-white/70"} transition-colors`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Legacy
+            </Link>
+            <Link
+              href="/sponsors"
+              className={`text-base font-medium ${isActive("/sponsors") ? "text-gold" : "text-white/70"} transition-colors`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sponsors
+            </Link>
+            <Link
+              href="/join"
+              className={`text-base font-medium ${isActive("/join") ? "text-gold" : "text-white/70"} transition-colors`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Join
+            </Link>
+            <Link
+              href="/contact"
+              className={`text-base font-medium ${isActive("/contact") ? "text-gold" : "text-white/70"} transition-colors`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
