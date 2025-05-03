@@ -1,7 +1,9 @@
+import { Analytics } from "@vercel/analytics/react"
 import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,8 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
+          <Suspense>{children}</Suspense>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

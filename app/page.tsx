@@ -143,7 +143,12 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                { name: "Alexander Kim", position: "President", image: "/legacy/2025/2025_President.jpeg" },
+                { name: "Cole Harcey", position: "Mechanical Lead", image: "/legacy/2025/2025_Mech.jpeg" },
+                { name: "Martin Michelli", position: "Electrical Lead", image: "/legacy/2025/2025_Electrical.jpeg" },
+                { name: "Tyler Zenz", position: "Software Lead", image: "/legacy/2025/2025_Software.jpeg" },
+              ].map((member, i) => (
                 <div key={i} className="group">
                   <div className="relative h-[350px] overflow-hidden rounded-2xl bg-zinc-800/70 backdrop-blur-sm p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-maroon/5 border border-white/10">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10"></div>
@@ -151,16 +156,16 @@ export default function Home() {
                       <div className="flex-1">
                         <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-zinc-700 mx-auto">
                           <Image
-                            src={`/focused-engineer.png?key=q27iz&key=dekrr&height=300&width=300&query=engineering student portrait ${i}`}
-                            alt={`Team Member ${i}`}
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
                             fill
                             className="object-cover"
                           />
                         </div>
                       </div>
                       <div className="mt-auto">
-                        <h3 className="text-xl font-bold">Team Member Name</h3>
-                        <p className="text-gold font-medium">Position / Role</p>
+                        <h3 className="text-xl font-bold">{member.name}</h3>
+                        <p className="text-gold font-medium">{member.position}</p>
                         <p className="text-white/60 text-sm mt-2">
                           Brief description about the team member and their contribution to the project.
                         </p>
