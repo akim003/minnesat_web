@@ -128,8 +128,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/60 z-1"></div>
+          {/* Dark overlay for better text readability - lighter shade */}
+          <div className="absolute inset-0 bg-black/30 z-1"></div>
 
           {/* Content with proper z-index */}
           <div className="container relative z-10 px-4 md:px-6">
@@ -196,8 +196,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/60 z-1"></div>
+          {/* Dark overlay for better text readability - lighter shade */}
+          <div className="absolute inset-0 bg-black/30 z-1"></div>
 
           {/* Content with proper z-index */}
           <div className="container relative z-10 px-4 md:px-6">
@@ -258,8 +258,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/60 z-1"></div>
+          {/* Dark overlay for better text readability - lighter shade */}
+          <div className="absolute inset-0 bg-black/30 z-1"></div>
 
           {/* Content with proper z-index */}
           <div className="container relative z-10 px-4 md:px-6">

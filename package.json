@@ -63,7 +63,8 @@
     "svelte": "latest",
     "vue": "latest",
     "vue-router": "latest",
-    "@vercel/analytics": "latest"
+    "@vercel/analytics": "latest",
+    "@formspree/react": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
