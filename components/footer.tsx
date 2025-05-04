@@ -102,9 +102,9 @@ export function Footer({ className }: FooterProps) {
               </button>
             </div>
 
-            <div className="border-t border-white/10">
+            <div className="border-t-2 border-white/20">
               <a
-                href="https://navica.com"
+                href="https://navicaweb.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity block py-4 flex"
@@ -118,7 +118,7 @@ export function Footer({ className }: FooterProps) {
                   className="h-auto w-auto max-w-[150px] object-contain"
                 />
               </a>
-              <div className="border-t border-white/10 pt-4">
+              <div className="border-t-2 border-white/20 pt-4">
                 <p className="text-white/60">© {new Date().getFullYear()} MinneSat. All rights reserved.</p>
               </div>
             </div>
