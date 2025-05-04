@@ -11,12 +11,12 @@ const pastProjects = [
     id: "2025",
     title: "2025 CanSat Competition",
     fullTitle: "Auto Gyro Descender",
-    description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
+    description: "Coming soon...",
     fullDescription:
-      "The 2025 MinneSat team developed our most advanced CanSat to date, featuring a sophisticated autonomous navigation system capable of precise landing control. The system incorporates machine learning algorithms for terrain recognition and advanced sensor fusion for optimal flight path determination.",
+      "Coming soon...",
     imageUrl: "/earth-orbit-blueprint.png",
     year: "2025",
-    location: "Blacksburg, Virginia",
+    location: "Staunton, Virginia",
     date: "June 2025",
     objective:
       "Design and build a CanSat that can autonomously navigate to a designated landing zone after deployment.",
@@ -71,10 +71,10 @@ const pastProjects = [
     fullTitle: "Planetary Probe Instrument Delivery Mission",
     description: "Best performance to date!",
     fullDescription:
-      "Our team delivered a strong showing at the 2024 CanSat Competition, successfully completing the mission and placing 13th overall out of dozens of international teams. Our headshield deployment worked well, ensuring a stable descent and safe payload delivery. The mission objectives were executed as planned, reflecting the team's dedication to reliable engineering and thorough testing.",
+      "MinneSat competed in the 2024 AAS international CanSat competition, placing 13th overall in a strong showing. The team successfully completed the mission, with a safe payload delivery and a fully functional heatshield deployment system, though a parachute malfunction affected the final descent.",
     imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
-    location: "Blacksburg, Virginia",
+    location: "Staunton, Virginia",
     date: "June 2024",
     objective: "Design and build a CanSat that simulates a planetary probe instrument delivery mission.",
     leadership: [
@@ -125,13 +125,13 @@ const pastProjects = [
   {
     id: "2023",
     title: "2023 CanSat Competition",
-    fullTitle: "Atmospheric Data Collection System",
-    description: "Our first competition entry that established the foundation for future MinneSat designs.",
+    fullTitle: "Planetary Probe Lander Mission",
+    description: "Successful mission with minor hiccups!",
     fullDescription:
-      "The inaugural MinneSat team designed and built an atmospheric data collection system capable of measuring temperature, pressure, and air quality during descent. The system included a custom parachute deployment mechanism and real-time data transmission capabilities that set the foundation for our future designs.",
+      "MinneSat competed in the 2023 AAS international CanSat competition, placing 24th overall. Despite encountering software and avionics challenges that prevented full mission execution, the team successfully completed launch and recovery while gaining critical experience across the full mission lifecycle—from mechanical integration to real-time flight operations. The project emphasized hands-on aerospace engineering and offered valuable lessons that will strengthen future competition efforts.",
     imageUrl: "/legacy/CanSat2023_Icon.jpg",
     year: "2023",
-    location: "Blacksburg, Virginia",
+    location: "Staunton, Virginia",
     date: "June 2023",
     objective: "Design and build a CanSat capable of collecting atmospheric data during descent.",
     leadership: [
@@ -168,7 +168,7 @@ const pastProjects = [
       "Tyler Mattson",
       "Ethan Tucker",
     ],
-    achievements: ["3rd Place Overall", "1st Place in Technical Design", "Best Telemetry System"],
+    achievements: ["24th Place Overall"],
     // Gallery images for each project
     gallery: [
       { url: "/legacy/2023/gallery1.jpg", alt: "CanSat Assembly" },
@@ -181,48 +181,48 @@ const pastProjects = [
   },
   {
     id: "2022",
-    title: "2022 CanSat Prototype",
-    fullTitle: "Initial Concept Development",
-    description: "Our prototype design that laid the groundwork for the MinneSat team's formation.",
+    title: "2022 CanSat Competition",
+    fullTitle: "Tethered Payload Mission",
+    description: "Inaugural Competition Entry",
     fullDescription:
-      "In 2022, a small group of passionate engineering students at the University of Minnesota began developing the initial concept for what would become the MinneSat team. This prototype CanSat focused on basic functionality and proof of concept, featuring a simple sensor package and recovery system. Though not officially entered in competition, this project was crucial in establishing our team and securing initial funding and faculty support.",
+      "MinneSat competed in the 2022 AAS international CanSat competition, placing 42nd overall in our first entry in recent history. Despite avionics and communications failures that prevented payload deployment and data collection, the CanSat was successfully recovered and the main parachute performed reliably, laying the groundwork for stronger performance by future teams.",
     imageUrl: "/legacy/CanSat2022_Icon.jpeg",
     year: "2022",
     location: "Minneapolis, Minnesota",
     date: "May 2022",
-    objective: "Develop a proof-of-concept CanSat to establish the team and secure funding.",
+    objective: "Tethered Payload Mission",
     leadership: [
       {
-        name: "Robert Taylor",
+        name: "Ben Stevens",
         role: "President",
-        imageUrl: "/focused-engineer.png?height=150&width=150&query=engineering student portrait male 8",
+        imageUrl: "/legacy/2022/2022_president.jpeg",
       },
       {
-        name: "Lisa Chang",
-        role: "Software Lead",
-        imageUrl: "/focused-engineer.png?height=150&width=150&query=engineering student portrait asian female 2",
+        name: "Alex Zhu",
+        role: "Vice President",
+        imageUrl: "/legacy/2022/2022_vice.jpeg",
       },
       {
-        name: "Marcus Peterson",
+        name: "Bodie Ziertman",
         role: "Mechanical Lead",
-        imageUrl: "/focused-engineer.png?height=150&width=150&query=engineering student portrait male 9",
+        imageUrl: "/legacy/2022/2022_mech.jpeg",
       },
       {
-        name: "Aisha Patel",
+        name: "Peyton Retzlaff",
         role: "Electrical Lead",
-        imageUrl: "/focused-engineer.png?height=150&width=150&query=engineering student portrait indian female",
+        imageUrl: "/legacy/2022/2022_Electrical.png",
       },
     ],
-    teamMembers: ["Robert Taylor", "Lisa Chang", "Marcus Peterson", "Aisha Patel"],
-    achievements: ["University Innovation Grant", "Engineering Department Recognition", "Successful Test Launch"],
-    // Gallery images for each project
+    teamMembers: ["Alex Zhu", "Ben Stevens", "Bodie Ziertman", "Peyton Retzlaff", "Max Tenuta", "Ethan Kolby"],
+    achievements: ["42nd Place Overall"],
+    // Gallery images for each project - updated with real images
     gallery: [
-      { url: "/legacy/2022/gallery1.jpg", alt: "Initial CanSat Concept" },
-      { url: "/legacy/2022/gallery2.jpg", alt: "First Team Meeting" },
-      { url: "/legacy/2022/gallery3.jpg", alt: "Component Selection" },
-      { url: "/legacy/2022/gallery4.jpg", alt: "Early Prototype" },
-      { url: "/legacy/2022/gallery5.jpg", alt: "Test Flight Preparation" },
-      { url: "/legacy/2022/gallery6.jpg", alt: "Faculty Presentation" },
+      { url: "/legacy/2022/gallery1.JPG", alt: "CanSat Prototype Electronics" },
+      { url: "/legacy/2022/gallery2.jpeg", alt: "Rocket Launch Testing" },
+      { url: "/legacy/2022/gallery3.jpeg", alt: "Team Design Meeting" },
+      { url: "/legacy/2022/gallery4.JPG", alt: "Field Recovery Testing" },
+      { url: "/legacy/2022/gallery5.jpeg", alt: "Team Presentation" },
+      { url: "/legacy/2022/gallery6.jpeg", alt: "Team Award Photo" },
     ],
   },
 ]

@@ -33,12 +33,6 @@ export function Navbar() {
         </div>
         <nav className="hidden md:flex items-center gap-6">
           <Link
-            href="/team"
-            className={`text-sm font-medium ${isActive("/team") ? "text-gold" : "text-white/70 hover:text-gold"} transition-colors`}
-          >
-            The Team
-          </Link>
-          <Link
             href="/legacy"
             className={`text-sm font-medium ${isActive("/legacy") ? "text-gold" : "text-white/70 hover:text-gold"} transition-colors`}
           >
@@ -72,13 +66,6 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden">
           <div className="flex flex-col space-y-4 px-4 py-6 bg-black/95 border-t border-white/10">
-            <Link
-              href="/team"
-              className={`text-base font-medium ${isActive("/team") ? "text-gold" : "text-white/70"} transition-colors`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              The Team
-            </Link>
             <Link
               href="/legacy"
               className={`text-base font-medium ${isActive("/legacy") ? "text-gold" : "text-white/70"} transition-colors`}

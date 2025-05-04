@@ -229,19 +229,6 @@ export default function SponsorshipInfoPage() {
                 </Button>
               </div>
             </div>
-
-            {/* CTA Section */}
-            <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center">
-              <h2 className="text-2xl font-bold mb-4">Ready to Support the Next Generation of Aerospace Engineers?</h2>
-              <p className="max-w-2xl mx-auto text-white/70 mb-6">
-                Your sponsorship makes a real difference in the educational experience of our team members and helps
-                advance innovation in space technology. Contact us today to discuss how you can become a MinneSat
-                sponsor.
-              </p>
-              <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">
-                <Link href="/contact">Contact Us Now</Link>
-              </Button>
-            </div>
           </div>
         </section>
       </main>

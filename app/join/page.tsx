@@ -295,13 +295,6 @@ export default function JoinPage() {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-8 text-center">
-                <p className="text-white/70">
-                  Join MinneSat and build the foundation for your future career in aerospace engineering, robotics, and
-                  beyond.
-                </p>
-              </div>
             </div>
           </div>
         </section>

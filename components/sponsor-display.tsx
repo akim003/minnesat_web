@@ -48,9 +48,12 @@ export function SponsorDisplay({
       {sponsors.map((sponsor, index) => (
         <div
           key={index}
-          className={`flex flex-col p-${compact ? "5" : "6"} ${customBgColor || "bg-zinc-900"} rounded-2xl ${customBorderWidth || "border"} ${customBorderColor || getSponsorBorderClass(sponsor.level, sponsor.isPlaceholder)} transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 h-full`}
+          className={`flex flex-col p-${compact ? "5" : "6"} ${customBgColor || "bg-zinc-800/70"} backdrop-blur-sm rounded-2xl ${customBorderWidth || "border"} ${customBorderColor || getSponsorBorderClass(sponsor.level, sponsor.isPlaceholder)} transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-gold/20 h-full relative overflow-hidden`}
         >
-          <div className="flex-1">
+          {/* Add gradient overlay similar to team cards */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-0"></div>
+
+          <div className="flex-1 relative z-10">
             <div className="flex items-center justify-between mb-4">
               <div className="relative h-16 w-40">
                 {sponsor.isPlaceholder ? (
@@ -74,12 +77,12 @@ export function SponsorDisplay({
                 <span className="text-sm font-medium capitalize">{sponsor.level}</span>
               </div>
             </div>
-            <h3 className={`${compact ? "text-lg" : "text-xl"} font-bold mb-2 ${customTextColor || ""}`}>
+            <h3 className={`${compact ? "text-lg" : "text-xl"} font-bold mb-2 ${customTextColor || "text-white"}`}>
               {sponsor.name}
             </h3>
             {showDescription && <p className={`${customTextColor || "text-white/70"} mb-4`}>{sponsor.description}</p>}
           </div>
-          <div className="mt-auto pt-4">
+          <div className="mt-auto pt-4 relative z-10">
             {sponsor.isPlaceholder ? (
               <Button
                 className={`${customButtonStyle || `bg-${sponsor.level === "gold" ? "gold" : sponsor.level === "silver" ? "zinc-300" : "amber-700"} hover:bg-${sponsor.level === "gold" ? "gold" : sponsor.level === "silver" ? "zinc-300" : "amber-700"}/80 ${sponsor.level === "gold" || sponsor.level === "silver" ? "text-black" : "text-white"}`} w-full group`}

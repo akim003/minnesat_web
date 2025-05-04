@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Linkedin, Mail } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { sponsors } from "@/data/sponsors"
@@ -12,14 +12,14 @@ const legacyProjects = [
   {
     id: "2025",
     title: "CanSat 2025 Project",
-    description: "Our latest competition entry featuring advanced telemetry and autonomous landing systems.",
+    description: "Coming soon...",
     imageUrl: "/earth-orbit-blueprint.png",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
-    description: "Award-winning design with innovative sensor array and data collection capabilities.",
+    description: "Best performance to date!",
     imageUrl: "/legacy/CanSat2024_Icon.jpg",
     year: "2024",
   },
@@ -48,28 +48,24 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black"></div>
           <div className="relative z-20 flex h-full items-center justify-center">
-            <div className="container px-4 md:px-6">
+            <div className="container px-4 md:px-6 -mt-16">
               <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="inline-block rounded-full bg-white/10 px-3 py-1 text-sm backdrop-blur-md mb-4">
-                  University of Minnesota
-                </div>
                 <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  <span className="block text-gold">CanSat Team</span>
+                  <span className="block text-white">MinneSat</span>
                 </h1>
-                <p className="max-w-[700px] text-white/80 md:text-xl">
-                  Designing, building, and launching space systems for the future
+                <p className="max-w-[700px] text-white md:text-xl font-semibold">
+                  Launching the Next Generation of Aerospace Engineers
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                  <Button className="bg-maroon hover:bg-maroon/90 text-white rounded-full px-8">Learn More</Button>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8">
-                    Join Our Team
+                  <Button asChild className="bg-maroon hover:bg-maroon/90 text-white rounded-full px-8">
+                    <Link href="/join">Join</Link>
+                  </Button>
+                  <Button asChild className="bg-maroon hover:bg-maroon/90 text-white rounded-full px-8">
+                    <Link href="/sponsors/info">Sponsor</Link>
                   </Button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-20">
-            <ChevronDown className="h-8 w-8 text-white" />
           </div>
         </section>
 
@@ -96,9 +92,10 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight mb-4">About MinneSat</h2>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="text-white/70 mb-6">
-                CanSat is an annual design-build-launch competition focused on space-related projects, organized by the
-                American Astronautical Society (AAS). Students are involved in the full end-to-end life cycle of a
-                complex engineering project—from initial design through to integration, testing, and final operation.
+                MinneSat is the University of Minnesota's CanSat competiton team. The CanSat competiton is an annual
+                design-build-launch competition focused on space-related projects, organized by the American
+                Astronautical Society (AAS). Students are involved in the full end-to-end life cycle of a complex
+                engineering project—from initial design through to integration, testing, and final operation.
               </p>
               <p className="text-white/70 mb-6">
                 The competition is open to university teams from around the world, and the University of Minnesota is
@@ -106,16 +103,17 @@ export default function Home() {
                 the guidelines provided by the competition.
               </p>
               <div className="flex justify-center mt-8">
-                <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">
-                  Our Mission <ArrowRight className="ml-2 h-4 w-4" />
+                <Button asChild className="bg-maroon hover:bg-maroon/90 text-black rounded-full px-8">
+                  <a href="https://cansatcompetition.com/mission.html" target="_blank" rel="noopener noreferrer">
+                    Our Mission <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Rest of the page content remains unchanged */}
-        {/* Team Section */}
+        {/* Team Section - Updated to 2025 Leadership */}
         <section id="team" className="py-24 relative">
           {/* Background image */}
           <div className="absolute inset-0 z-0">
@@ -135,11 +133,11 @@ export default function Home() {
           <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center mb-16">
               <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-sm text-gold mb-4">Our Team</div>
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Meet Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">2025 Leadership</h2>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="max-w-3xl text-white/70">
-                Our team consists of dedicated students from various engineering disciplines who work together to
-                design, build, and launch our CanSat projects.
+                Meet the student leaders guiding our 2025 CanSat project. This dedicated team coordinates our
+                engineering efforts across mechanical, electrical, and software disciplines.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -167,7 +165,9 @@ export default function Home() {
                         <h3 className="text-xl font-bold">{member.name}</h3>
                         <p className="text-gold font-medium">{member.position}</p>
                         <p className="text-white/60 text-sm mt-2">
-                          Brief description about the team member and their contribution to the project.
+                          {member.position === "President"
+                            ? "Oversees all team operations and competition strategy."
+                            : `Leads the ${member.position.split(" ")[0].toLowerCase()} design and development efforts.`}
                         </p>
                       </div>
                     </div>
@@ -176,8 +176,8 @@ export default function Home() {
               ))}
             </div>
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="border-gold/50 text-gold hover:bg-gold/10 rounded-full px-8">
-                View All Team Members
+              <Button className="bg-maroon hover:bg-maroon/90 text-black rounded-full px-8">
+                <Link href="/join">Join Our Team</Link>
               </Button>
             </div>
           </div>
@@ -227,18 +227,13 @@ export default function Home() {
                     <div className="p-6">
                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                       <p className="mb-4 text-white/70">{project.description}</p>
-                      <Button className="bg-gold hover:bg-gold/90 text-black rounded-full">View Project</Button>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
             <div className="flex justify-center mt-12">
-              <Button
-                asChild
-                variant="outline"
-                className="border-maroon/50 text-maroon hover:bg-maroon/10 rounded-full px-8"
-              >
+              <Button asChild className="bg-maroon hover:bg-maroon/90 text-black rounded-full px-8">
                 <Link href="/legacy">View All Projects</Link>
               </Button>
             </div>
@@ -278,10 +273,10 @@ export default function Home() {
               sponsors={realSponsors}
               showDescription={false}
               compact={true}
-              customBgColor="bg-[#454446]/80"
-              customBorderWidth="border-2"
+              customBgColor="bg-zinc-800/70"
+              customBorderWidth="border"
               customTextColor="text-white"
-              customBorderColor="border-gold/30"
+              customBorderColor="border-white/10"
               customButtonStyle="bg-black hover:bg-black/90 text-gold"
             />
 
@@ -290,7 +285,7 @@ export default function Home() {
               <p className="max-w-2xl mx-auto text-white/70 mb-6">
                 Interested in supporting our team? We are always looking for new sponsors to help us reach our goals.
               </p>
-              <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">
+              <Button className="bg-maroon hover:bg-maroon/90 text-black rounded-full px-8">
                 <Link href="/sponsors/info">Learn More</Link>
               </Button>
             </div>
@@ -388,7 +383,7 @@ export default function Home() {
                       className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     ></textarea>
                   </div>
-                  <Button className="w-full bg-maroon hover:bg-maroon/90 rounded-full">Send Message</Button>
+                  <Button className="w-full bg-maroon hover:bg-maroon/90 text-black rounded-full">Send Message</Button>
                 </form>
               </div>
             </div>

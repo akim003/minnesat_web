@@ -1,30 +1,14 @@
-"use client"
-
-import type React from "react"
-
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Mail, MapPin, Clock, CheckCircle } from "lucide-react"
+import { Mail, MapPin, Clock } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
-import { useForm, ValidationError } from "@formspree/react"
+
+export const metadata = {
+  title: "MinneSat - Contact Us",
+  description: "Get in touch with the University of Minnesota's CanSat team",
+}
 
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm("xovdeyvz")
-  const [interests, setInterests] = useState({
-    joining: false,
-    sponsorship: false,
-    general: false,
-    other: false,
-  })
-
-  const handleInterestChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInterests({
-      ...interests,
-      [e.target.name]: e.target.checked,
-    })
-  }
-
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
       {/* Header */}
@@ -96,166 +80,88 @@ export default function ContactPage() {
 
               <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-
-                {state.succeeded ? (
-                  <div className="text-center py-8">
-                    <div className="flex justify-center mb-4">
-                      <CheckCircle className="h-16 w-16 text-green-500" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                    <p className="text-white/70 mb-6">
-                      Thank you for reaching out to MinneSat. We'll get back to you as soon as possible.
-                    </p>
-                    <Button
-                      onClick={() => window.location.reload()}
-                      className="bg-maroon hover:bg-maroon/90 rounded-full"
-                    >
-                      Send Another Message
-                    </Button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium text-white/80">
-                          Name
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                          placeholder="Your name"
-                        />
-                        <ValidationError
-                          prefix="Name"
-                          field="name"
-                          errors={state.errors}
-                          className="text-red-400 text-sm"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium text-white/80">
-                          Email
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                          placeholder="your.email@example.com"
-                        />
-                        <ValidationError
-                          prefix="Email"
-                          field="email"
-                          errors={state.errors}
-                          className="text-red-400 text-sm"
-                        />
-                      </div>
-                    </div>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium text-white/80">
-                        Subject
+                      <label htmlFor="name" className="text-sm font-medium text-white/80">
+                        Name
                       </label>
                       <input
-                        id="subject"
-                        name="subject"
+                        id="name"
                         type="text"
-                        required
                         className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                        placeholder="What is this regarding?"
-                      />
-                      <ValidationError
-                        prefix="Subject"
-                        field="subject"
-                        errors={state.errors}
-                        className="text-red-400 text-sm"
+                        placeholder="Your name"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium text-white/80">
-                        Message
+                      <label htmlFor="email" className="text-sm font-medium text-white/80">
+                        Email
                       </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={6}
-                        required
-                        className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                        placeholder="Your message here..."
-                      ></textarea>
-                      <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                        className="text-red-400 text-sm"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/80">I am interested in:</label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        <label className="flex items-center gap-2 text-white/80">
-                          <input
-                            type="checkbox"
-                            name="joining"
-                            checked={interests.joining}
-                            onChange={handleInterestChange}
-                            className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
-                          />
-                          <span>Joining the team</span>
-                        </label>
-                        <label className="flex items-center gap-2 text-white/80">
-                          <input
-                            type="checkbox"
-                            name="sponsorship"
-                            checked={interests.sponsorship}
-                            onChange={handleInterestChange}
-                            className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
-                          />
-                          <span>Sponsorship opportunities</span>
-                        </label>
-                        <label className="flex items-center gap-2 text-white/80">
-                          <input
-                            type="checkbox"
-                            name="general"
-                            checked={interests.general}
-                            onChange={handleInterestChange}
-                            className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
-                          />
-                          <span>General information</span>
-                        </label>
-                        <label className="flex items-center gap-2 text-white/80">
-                          <input
-                            type="checkbox"
-                            name="other"
-                            checked={interests.other}
-                            onChange={handleInterestChange}
-                            className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
-                          />
-                          <span>Other</span>
-                        </label>
-                      </div>
-                      {/* Hidden field to send interests as a formatted string */}
                       <input
-                        type="hidden"
-                        name="interests"
-                        value={Object.entries(interests)
-                          .filter(([_, value]) => value)
-                          .map(([key]) => key)
-                          .join(", ")}
+                        id="email"
+                        type="email"
+                        className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                        placeholder="your.email@example.com"
                       />
                     </div>
-                    <Button
-                      type="submit"
-                      disabled={state.submitting}
-                      className="w-full bg-maroon hover:bg-maroon/90 rounded-full"
-                    >
-                      {state.submitting ? "Sending..." : "Send Message"}
-                    </Button>
-                  </form>
-                )}
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium text-white/80">
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      type="text"
+                      className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                      placeholder="What is this regarding?"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium text-white/80">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={6}
+                      className="w-full rounded-lg border border-white/10 bg-zinc-800/50 p-2 text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                      placeholder="Your message here..."
+                    ></textarea>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-white/80">I am interested in:</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <label className="flex items-center gap-2 text-white/80">
+                        <input
+                          type="checkbox"
+                          className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
+                        />
+                        <span>Joining the team</span>
+                      </label>
+                      <label className="flex items-center gap-2 text-white/80">
+                        <input
+                          type="checkbox"
+                          className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
+                        />
+                        <span>Sponsorship opportunities</span>
+                      </label>
+                      <label className="flex items-center gap-2 text-white/80">
+                        <input
+                          type="checkbox"
+                          className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
+                        />
+                        <span>General information</span>
+                      </label>
+                      <label className="flex items-center gap-2 text-white/80">
+                        <input
+                          type="checkbox"
+                          className="rounded border-white/20 bg-zinc-800/50 text-maroon focus:ring-maroon"
+                        />
+                        <span>Other</span>
+                      </label>
+                    </div>
+                  </div>
+                  <Button className="w-full bg-maroon hover:bg-maroon/90 rounded-full">Send Message</Button>
+                </form>
               </div>
             </div>
           </div>
