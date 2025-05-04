@@ -1,7 +1,35 @@
 "use client"
 
-import { useRouter } from "next/navigation"
-import { useCallback } from "react"
+import { usePathname, useSearchParams, useRouter } from "next/navigation"
+import { useCallback, useEffect } from "react"
+import { Suspense } from "react"
+
+function NavigationHandlerInner() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    // Disable scroll restoration
+    if (history.scrollRestoration) {
+      history.scrollRestoration = "manual"
+    }
+
+    // Only scroll to top if there's no hash in the URL
+    if (!window.location.hash) {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, searchParams])
+
+  return null
+}
+
+export function NavigationHandler() {
+  return (
+    <Suspense fallback={null}>
+      <NavigationHandlerInner />
+    </Suspense>
+  )
+}
 
 export function useCustomNavigation() {
   const router = useRouter()
