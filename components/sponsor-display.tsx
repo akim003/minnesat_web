@@ -85,7 +85,7 @@ export function SponsorDisplay({
                 )}
               </div>
               <div
-                className={`rounded-full px-2 py-1 sm:px-3 sm:py-1 flex items-center gap-1 sm:gap-2 ${getSponsorLevelClass(sponsor.level)}`}
+                className={`rounded-full px-2 py-1 sm:px-3 sm:py-1 flex items-center gap-1 sm:gap-2 ${getSponsorLevelClass(sponsor.level).replace(/border-[^/\s]+\/\d+/g, "")}`}
               >
                 {getSponsorLevelIcon(sponsor.level)}
                 <span className="text-xs sm:text-sm font-medium capitalize">{sponsor.level}</span>

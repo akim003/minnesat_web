@@ -76,7 +76,7 @@ export function Footer({ className }: FooterProps) {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a
                 href="https://www.linkedin.com/company/minnesat"
                 target="_blank"
@@ -101,10 +101,28 @@ export function Footer({ className }: FooterProps) {
                 )}
               </button>
             </div>
+
+            <div className="border-t border-white/10">
+              <a
+                href="https://navica.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity block py-4 flex"
+                aria-label="Powered by NAVICA"
+              >
+                <Image
+                  src="/footer/dark-plaque.png"
+                  alt="Powered by NAVICA"
+                  width={150}
+                  height={42}
+                  className="h-auto w-auto max-w-[150px] object-contain"
+                />
+              </a>
+              <div className="border-t border-white/10 pt-4">
+                <p className="text-white/60">© {new Date().getFullYear()} MinneSat. All rights reserved.</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="mt-12 border-t border-white/10 pt-8 text-center text-white/60">
-          <p>© {new Date().getFullYear()} MinneSat. All rights reserved.</p>
         </div>
       </div>
     </footer>

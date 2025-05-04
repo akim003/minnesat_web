@@ -97,11 +97,11 @@ export const getSponsorLevelIcon = (level: string) => {
 export const getSponsorLevelClass = (level: string) => {
   switch (level) {
     case "gold":
-      return "bg-gold/10 text-gold border-gold/30"
+      return "bg-gold/10 text-gold"
     case "silver":
-      return "bg-zinc-300/10 text-zinc-300 border-zinc-300/30"
+      return "bg-zinc-300/10 text-zinc-300"
     case "bronze":
-      return "bg-amber-700/10 text-amber-700 border-amber-700/30"
+      return "bg-amber-700/10 text-amber-700"
     default:
       return ""
   }
