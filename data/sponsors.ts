@@ -45,6 +45,7 @@ export const placeholderSponsors = [
     description:
       "Partner with us to support innovation and visibility. Your contribution helps us acquire essential components and materials.",
     level: "silver",
+    imageUrl: "/sponsors/your-logo-here.webp",
     isPlaceholder: true,
   },
   {
@@ -52,24 +53,28 @@ export const placeholderSponsors = [
     description:
       "Support the next generation of aerospace engineers and gain recognition among future industry professionals.",
     level: "silver",
+    imageUrl: "/sponsors/your-logo-here.webp",
     isPlaceholder: true,
   },
   {
     name: "Join Our Bronze Sponsors",
     description: "Every contribution matters! Join our bronze tier to help students achieve their engineering dreams.",
     level: "bronze",
+    imageUrl: "/sponsors/your-logo-here.webp",
     isPlaceholder: true,
   },
   {
     name: "Join Our Bronze Sponsors",
     description: "Support student innovation and help us reach new heights in aerospace engineering education.",
     level: "bronze",
+    imageUrl: "/sponsors/your-logo-here.webp",
     isPlaceholder: true,
   },
   {
     name: "Join Our Bronze Sponsors",
     description: "Be part of our journey to design and build innovative space systems for the CanSat competition.",
     level: "bronze",
+    imageUrl: "/sponsors/your-logo-here.webp",
     isPlaceholder: true,
   },
 ]

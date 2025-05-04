@@ -111,7 +111,7 @@ const pastProjects = [
       "Elliot Zimpfer",
     ],
     achievements: ["13th Place Overall", "Payload Delivered Intact"],
-    // Gallery images for each project
+    // Gallery images for each project - updated with WebP images
     gallery: [
       { url: "/legacy/2024/gallery_1.webp", alt: "Award Ceremony" },
       { url: "/legacy/2024/gallery_2.webp", alt: "Launch" },
@@ -292,6 +292,9 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                   alt={project.title}
                   fill
                   className="project-image"
+                  loading="eager"
+                  priority={true}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 
@@ -351,6 +354,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                         alt={leader.name}
                         fill
                         className="object-cover"
+                        loading="lazy"
+                        sizes="96px"
                       />
                     </div>
                     <h4 className="font-medium text-base">{leader.name}</h4>
@@ -410,6 +415,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                           alt={image.alt || `Project image ${i + 1}`}
                           fill
                           className="gallery-image"
+                          loading="lazy"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                           <p className="text-white text-sm font-medium">{image.alt}</p>
@@ -424,6 +431,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                           alt={`Project image ${i + 1}`}
                           fill
                           className="gallery-image"
+                          loading="lazy"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                           <p className="text-white text-sm font-medium">Project Image {i + 1}</p>
@@ -449,6 +458,8 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                             alt={otherProject.title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         </div>

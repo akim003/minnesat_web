@@ -75,8 +75,9 @@
   }
 }
 
+/* Remove global smooth scrolling - we'll apply it only when needed */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom colors */

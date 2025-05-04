@@ -63,10 +63,10 @@
     "svelte": "latest",
     "vue": "latest",
     "vue-router": "latest",
-    "@vercel/analytics": "latest",
     "fs": "latest",
     "path": "latest",
-    "sharp": "latest"
+    "sharp": "latest",
+    "@vercel/analytics": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

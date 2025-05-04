@@ -58,10 +58,11 @@ export function SponsorDisplay({
               <div className="relative h-16 w-40">
                 {sponsor.isPlaceholder ? (
                   <Image
-                    src="/sponsors/your-logo-here.png"
+                    src="/sponsors/your-logo-here.webp"
                     alt="Your Logo Here"
                     fill
                     className="object-contain opacity-60"
+                    loading="lazy"
                   />
                 ) : (
                   <Image
@@ -69,6 +70,7 @@ export function SponsorDisplay({
                     alt={sponsor.name}
                     fill
                     className="object-contain"
+                    loading="lazy"
                   />
                 )}
               </div>

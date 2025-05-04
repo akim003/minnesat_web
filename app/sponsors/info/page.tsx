@@ -16,6 +16,25 @@ export default function SponsorshipInfoPage() {
       <Navbar />
 
       <main className="flex-1">
+        {/* Add this right after the opening <main> tag */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      // Handle anchor scrolling after page load
+      window.addEventListener('load', function() {
+        if (window.location.hash) {
+          setTimeout(function() {
+            const id = window.location.hash.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 300);
+        }
+      });
+    `,
+          }}
+        />
         {/* Hero Section */}
         <section className="relative py-24 bg-black">
           <div className="container px-4 md:px-6">
@@ -72,7 +91,7 @@ export default function SponsorshipInfoPage() {
             <h2 className="text-3xl font-bold text-center mb-12">Sponsorship Tiers</h2>
 
             {/* Gold Tier */}
-            <div className="mb-16">
+            <div className="mb-16" id="gold-tier">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gold/20 p-3 rounded-full">
                   <Trophy className="h-8 w-8 text-gold" />
@@ -126,7 +145,7 @@ export default function SponsorshipInfoPage() {
             </div>
 
             {/* Silver Tier */}
-            <div className="mb-16">
+            <div className="mb-16" id="silver-tier">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-zinc-300/20 p-3 rounded-full">
                   <Medal className="h-8 w-8 text-zinc-300" />
@@ -172,7 +191,7 @@ export default function SponsorshipInfoPage() {
             </div>
 
             {/* Bronze Tier */}
-            <div className="mb-16">
+            <div className="mb-16" id="bronze-tier">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-amber-700/20 p-3 rounded-full">
                   <Award className="h-8 w-8 text-amber-700" />

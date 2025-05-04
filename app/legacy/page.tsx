@@ -73,6 +73,8 @@ export default function LegacyPage() {
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">

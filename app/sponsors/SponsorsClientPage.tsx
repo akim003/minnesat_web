@@ -92,7 +92,7 @@ export default function SponsorsClientPage() {
                         <div className="relative h-16 w-40">
                           {sponsor.isPlaceholder ? (
                             <Image
-                              src="/sponsors/your-logo-here.png"
+                              src="/sponsors/your-logo-here.webp"
                               alt="Your Logo Here"
                               fill
                               className="object-contain opacity-60"
@@ -116,8 +116,13 @@ export default function SponsorsClientPage() {
                     </div>
                     <div className="mt-auto pt-4">
                       {sponsor.isPlaceholder ? (
-                        <Button className="bg-zinc-300 hover:bg-zinc-300/80 text-black w-full group">
-                          <Link href="/sponsors/info" className="flex items-center justify-center w-full">
+                        <Button
+                          className="bg-zinc-300 hover:bg-zinc-300/80 text-black w-full group"
+                          onClick={() => {
+                            window.location.href = "/sponsors/info#silver-tier"
+                          }}
+                        >
+                          <div className="flex items-center justify-center w-full">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -134,7 +139,7 @@ export default function SponsorsClientPage() {
                               <path d="M12 5v14" />
                             </svg>
                             Sponsor Us
-                          </Link>
+                          </div>
                         </Button>
                       ) : (
                         <Button
@@ -172,7 +177,7 @@ export default function SponsorsClientPage() {
                         <div className="relative h-16 w-40">
                           {sponsor.isPlaceholder ? (
                             <Image
-                              src="/sponsors/your-logo-here.png"
+                              src="/sponsors/your-logo-here.webp"
                               alt="Your Logo Here"
                               fill
                               className="object-contain opacity-60"
@@ -196,8 +201,13 @@ export default function SponsorsClientPage() {
                     </div>
                     <div className="mt-auto pt-4">
                       {sponsor.isPlaceholder ? (
-                        <Button className="bg-amber-700 hover:bg-amber-700/80 text-white w-full group">
-                          <Link href="/sponsors/info" className="flex items-center justify-center w-full">
+                        <Button
+                          className="bg-amber-700 hover:bg-amber-700/80 text-white w-full group"
+                          onClick={() => {
+                            window.location.href = "/sponsors/info#bronze-tier"
+                          }}
+                        >
+                          <div className="flex items-center justify-center w-full">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -214,7 +224,7 @@ export default function SponsorsClientPage() {
                               <path d="M12 5v14" />
                             </svg>
                             Sponsor Us
-                          </Link>
+                          </div>
                         </Button>
                       ) : (
                         <Button

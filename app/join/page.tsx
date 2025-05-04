@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default function JoinPage() {
-  // Array of companies where alumni work - updated with BAE Systems
+  // Array of companies where alumni work - updated with WebP images
   const alumniCompanies = [
     { name: "Black River Systems Company", logo: "/alumni/logos/black_river_systems_logo.webp" },
     { name: "MIT", logo: "/alumni/logos/mit_logo.webp" },
@@ -43,7 +43,7 @@ export default function JoinPage() {
 
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="relative h-[400px] overflow-hidden rounded-2xl border border-white/10">
-                <Image src="/team-competition.jpeg" alt="MinneSat Team at Competition" fill className="object-cover" />
+                <Image src="/team-competition.webp" alt="MinneSat Team at Competition" fill className="object-cover" />
               </div>
 
               <div>
@@ -290,6 +290,7 @@ export default function JoinPage() {
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
+                        loading="lazy"
                       />
                     </div>
                   </div>

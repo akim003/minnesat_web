@@ -45,6 +45,7 @@ export default function Home() {
             height={1080}
             className="absolute inset-0 h-full w-full object-cover opacity-70"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black"></div>
           <div className="relative z-20 flex h-full items-center justify-center">
@@ -79,6 +80,7 @@ export default function Home() {
               fill
               className="object-cover opacity-40"
               priority
+              sizes="100vw"
             />
           </div>
 
@@ -113,7 +115,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Team Section - Updated to 2025 Leadership */}
+        {/* Team Section - Updated to 2025 Leadership with new WebP images */}
         <section id="team" className="py-24 relative">
           {/* Background image */}
           <div className="absolute inset-0 z-0">
@@ -122,7 +124,8 @@ export default function Home() {
               alt="Team at competition"
               fill
               className="object-cover opacity-30"
-              priority
+              loading="lazy"
+              sizes="100vw"
             />
           </div>
 
@@ -158,6 +161,8 @@ export default function Home() {
                             alt={member.name}
                             fill
                             className="object-cover"
+                            loading="lazy"
+                            sizes="128px"
                           />
                         </div>
                       </div>
@@ -192,7 +197,8 @@ export default function Home() {
               alt="Team setting up launch rail"
               fill
               className="object-cover opacity-35"
-              priority
+              loading="lazy"
+              sizes="100vw"
             />
           </div>
 
@@ -220,6 +226,8 @@ export default function Home() {
                         alt={project.title}
                         fill
                         className="project-image transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       {/* Reduced opacity of the gradient overlay from black/60 to black/30 */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
@@ -249,7 +257,8 @@ export default function Home() {
               alt="University of Minnesota campus and Minneapolis skyline"
               fill
               className="object-cover opacity-25"
-              priority
+              loading="lazy"
+              sizes="100vw"
             />
           </div>
 
