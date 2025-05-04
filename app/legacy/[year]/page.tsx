@@ -217,11 +217,11 @@ const pastProjects = [
     // Gallery images for each project - updated with real images
     gallery: [
       { url: "/legacy/2022/gallery1.webp", alt: "CanSat Prototype Electronics" },
-      { url: "/legacy/2022/gallery2.webp", alt: "Rocket Launch Testing" },
-      { url: "/legacy/2022/gallery3.webp", alt: "Team Design Meeting" },
+      { url: "/legacy/2022/gallery2.jpeg", alt: "Rocket Launch Testing" },
+      { url: "/legacy/2022/gallery3.jpeg", alt: "Team Design Meeting" },
       { url: "/legacy/2022/gallery4.webp", alt: "Field Recovery Testing" },
-      { url: "/legacy/2022/gallery5.webp", alt: "Team Presentation" },
-      { url: "/legacy/2022/gallery6.webp", alt: "Team Award Photo" },
+      { url: "/legacy/2022/gallery5.jpeg", alt: "Team Presentation" },
+      { url: "/legacy/2022/gallery6.jpeg", alt: "Team Award Photo" },
     ],
   },
 ]
@@ -288,10 +288,10 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <div className="grid gap-12 lg:grid-cols-2 items-start mb-12">
               <div className="relative h-[400px] overflow-hidden rounded-2xl border border-white/10">
                 <Image
-                  src={project.imageUrl || "/placeholder.svg"}
+                  src={project.imageUrl || "/placeholder.svg?height=400&width=600&query=cansat project"}
                   alt={project.title}
                   fill
-                  className="project-image"
+                  className="project-image object-cover"
                   loading="eager"
                   priority={true}
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -350,7 +350,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                   >
                     <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-gold mb-3">
                       <Image
-                        src={leader.imageUrl || "/placeholder.svg"}
+                        src={leader.imageUrl || "/placeholder.svg?height=96&width=96&query=team member portrait"}
                         alt={leader.name}
                         fill
                         className="object-cover"
@@ -403,42 +403,50 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
             <div className="mb-12">
               <h3 className="text-2xl font-bold mb-6 text-center">Project Gallery</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {project.gallery
-                  ? // If project has gallery images, use those
-                    project.gallery.map((image, i) => (
-                      <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
+                {project.id === "2025" ? (
+                  // Special handling for 2025 project with placeholder images
+                  <>
+                    {[1, 2, 3, 4, 5, 6].map((num) => (
+                      <div key={num} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
                         <Image
-                          src={
-                            image.url ||
-                            `/placeholder.svg?height=300&width=400&query=cansat project image ${project.year || "/placeholder.svg"} ${i + 1}`
-                          }
-                          alt={image.alt || `Project image ${i + 1}`}
+                          src={`/placeholder.svg?key=29jfq&height=300&width=400&query=cansat ${project.id} project image ${num}`}
+                          alt={`Future ${project.id} Project Image ${num}`}
                           fill
-                          className="gallery-image"
+                          className="object-cover"
                           loading="lazy"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                          <p className="text-white text-sm font-medium">{image.alt}</p>
-                        </div>
-                      </div>
-                    ))
-                  : // Fallback to placeholder images if no gallery is defined
-                    Array.from({ length: 6 }).map((_, i) => (
-                      <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
-                        <Image
-                          src={`/cansat-project.png?key=alkq6&key=bwaj3&key=qnme5&key=5vt0p&key=zw4af&key=t1vpo&key=zbhwz&key=lydov&height=300&width=400&query=cansat project image ${project.year} ${i + 1}`}
-                          alt={`Project image ${i + 1}`}
-                          fill
-                          className="gallery-image"
-                          loading="lazy"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                          <p className="text-white text-sm font-medium">Project Image {i + 1}</p>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-100 flex items-end p-4">
+                          <p className="text-white text-sm font-medium">Coming Soon - {project.id} Project</p>
                         </div>
                       </div>
                     ))}
+                  </>
+                ) : (
+                  // Regular gallery for other projects
+                  project.gallery &&
+                  project.gallery.map((image, i) => (
+                    <div key={i} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
+                      <Image
+                        src={image.url || `/placeholder.svg?height=300&width=400&query=cansat project image ${i + 1}`}
+                        alt={image.alt || `Project image ${i + 1}`}
+                        fill
+                        className="object-cover"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        onError={(e) => {
+                          // Fallback for image loading errors
+                          const target = e.target as HTMLImageElement
+                          target.onerror = null // Prevent infinite loop
+                          target.src = `/placeholder.svg?height=300&width=400&query=cansat ${project.id} image ${i + 1}`
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p className="text-white text-sm font-medium">{image.alt || `Project Image ${i + 1}`}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
 
@@ -454,7 +462,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                       <div className="relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 transition-all duration-300 hover:border-gold/30">
                         <div className="relative h-40 w-full overflow-hidden">
                           <Image
-                            src={otherProject.imageUrl || "/placeholder.svg"}
+                            src={otherProject.imageUrl || "/placeholder.svg?height=160&width=320&query=cansat project"}
                             alt={otherProject.title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"

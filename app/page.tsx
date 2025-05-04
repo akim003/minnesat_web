@@ -1,7 +1,10 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Linkedin, Mail, Check } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { sponsors } from "@/data/sponsors"
@@ -26,6 +29,7 @@ const legacyProjects = [
 ]
 
 export default function Home() {
+  const [copied, setCopied] = useState(false)
   // Get only real (non-placeholder) sponsors for the home page
   const realSponsors = sponsors.filter((sponsor) => !sponsor.isPlaceholder)
 
@@ -346,6 +350,25 @@ export default function Home() {
                     <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("minnesat@umn.edu").then(() => {
+                        setCopied(true)
+                        setTimeout(() => setCopied(false), 2000)
+                      })
+                    }}
+                    className="text-white/60 hover:text-gold transition-colors relative"
+                    aria-label="Copy email to clipboard"
+                    title="Click to copy email to clipboard"
+                  >
+                    {copied ? <Check className="h-6 w-6 text-green-500" /> : <Mail className="h-6 w-6" />}
+                    <span className="sr-only">Copy email to clipboard</span>
+                    {copied && (
+                      <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-zinc-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                        Email copied!
+                      </span>
+                    )}
+                  </button>
                 </div>
               </div>
               <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
