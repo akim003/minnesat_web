@@ -27,7 +27,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
+            <Image src="/favicon.webp" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
             <span className="text-xl font-bold tracking-tight">MinneSat</span>
           </Link>
         </div>

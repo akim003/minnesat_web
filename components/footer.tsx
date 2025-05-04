@@ -26,7 +26,13 @@ export function Footer({ className }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/favicon.jpg" alt="MinneSat Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
+              <Image
+                src="/favicon.webp"
+                alt="MinneSat Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full"
+              />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </div>
             <p className="text-white/60 max-w-xs">

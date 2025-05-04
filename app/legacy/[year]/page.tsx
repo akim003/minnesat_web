@@ -12,9 +12,8 @@ const pastProjects = [
     title: "2025 CanSat Competition",
     fullTitle: "Auto Gyro Descender",
     description: "Coming soon...",
-    fullDescription:
-      "Coming soon...",
-    imageUrl: "/earth-orbit-blueprint.png",
+    fullDescription: "Coming soon...",
+    imageUrl: "/earth-orbit-blueprint.webp",
     year: "2025",
     location: "Staunton, Virginia",
     date: "June 2025",
@@ -24,22 +23,22 @@ const pastProjects = [
       {
         name: "Alexander Kim",
         role: "President",
-        imageUrl: "/legacy/2025/2025_President.jpeg",
+        imageUrl: "/legacy/2025/2025_President.webp",
       },
       {
         name: "Cole Harcey",
         role: "Mechanical Lead",
-        imageUrl: "/legacy/2025/2025_Mech.jpeg",
+        imageUrl: "/legacy/2025/2025_Mech.webp",
       },
       {
         name: "Martin Michelli",
         role: "Electrical Lead",
-        imageUrl: "/legacy/2025/2025_Electrical.jpeg",
+        imageUrl: "/legacy/2025/2025_Electrical.webp",
       },
       {
         name: "Tyler Zenz",
         role: "Software Lead",
-        imageUrl: "/legacy/2025/2025_Software.jpeg",
+        imageUrl: "/legacy/2025/2025_Software.webp",
       },
     ],
     teamMembers: [
@@ -57,12 +56,12 @@ const pastProjects = [
     achievements: ["Competition in progress", "Best Technical Design (Preliminary Round)", "Innovation Award Nominee"],
     // Gallery images for each project
     gallery: [
-      { url: "/legacy/2025/gallery1.jpg", alt: "CanSat 2025 Assembly" },
-      { url: "/legacy/2025/gallery2.jpg", alt: "Navigation System Testing" },
-      { url: "/legacy/2025/gallery3.jpg", alt: "Team Working on Electronics" },
-      { url: "/legacy/2025/gallery4.jpg", alt: "Software Development Session" },
-      { url: "/legacy/2025/gallery5.jpg", alt: "Field Testing" },
-      { url: "/legacy/2025/gallery6.jpg", alt: "Final Design Presentation" },
+      { url: "/legacy/2025/gallery1.webp", alt: "CanSat 2025 Assembly" },
+      { url: "/legacy/2025/gallery2.webp", alt: "Navigation System Testing" },
+      { url: "/legacy/2025/gallery3.webp", alt: "Team Working on Electronics" },
+      { url: "/legacy/2025/gallery4.webp", alt: "Software Development Session" },
+      { url: "/legacy/2025/gallery5.webp", alt: "Field Testing" },
+      { url: "/legacy/2025/gallery6.webp", alt: "Final Design Presentation" },
     ],
   },
   {
@@ -72,7 +71,7 @@ const pastProjects = [
     description: "Best performance to date!",
     fullDescription:
       "MinneSat competed in the 2024 AAS international CanSat competition, placing 13th overall in a strong showing. The team successfully completed the mission, with a safe payload delivery and a fully functional heatshield deployment system, though a parachute malfunction affected the final descent.",
-    imageUrl: "/legacy/CanSat2024_Icon.jpg",
+    imageUrl: "/legacy/CanSat2024_Icon.webp",
     year: "2024",
     location: "Staunton, Virginia",
     date: "June 2024",
@@ -81,22 +80,22 @@ const pastProjects = [
       {
         name: "Ethan Kolby",
         role: "President",
-        imageUrl: "/legacy/2024/2024_President.jpeg",
+        imageUrl: "/legacy/2024/2024_President.webp",
       },
       {
         name: "Shea Larson",
         role: "Vice President",
-        imageUrl: "/legacy/2024/2024_Vice.jpeg",
+        imageUrl: "/legacy/2024/2024_Vice.webp",
       },
       {
         name: "Alexander Kim",
         role: "Software Lead",
-        imageUrl: "/legacy/2024/2024_SoftwareLead.jpeg",
+        imageUrl: "/legacy/2024/2024_SoftwareLead.webp",
       },
       {
         name: "Martin Michelli",
         role: "Electrical Lead",
-        imageUrl: "/legacy/2024/2024_Electrical.jpeg",
+        imageUrl: "/legacy/2024/2024_Electrical.webp",
       },
     ],
     teamMembers: [
@@ -114,12 +113,12 @@ const pastProjects = [
     achievements: ["13th Place Overall", "Payload Delivered Intact"],
     // Gallery images for each project
     gallery: [
-      { url: "/legacy/2024/gallery_1.JPG", alt: "Award Ceremony" },
-      { url: "/legacy/2024/gallery_2.jpg", alt: "Launch" },
-      { url: "/legacy/2024/gallery_3.JPG", alt: "Compliance Testing" },
-      { url: "/legacy/2024/gallery_4.jpg", alt: "Launch Prep" },
-      { url: "/legacy/2024/gallery_5.jpg", alt: "Photo with Korean Team" },
-      { url: "/legacy/2024/gallery_6.jpg", alt: "Post Launch" },
+      { url: "/legacy/2024/gallery_1.webp", alt: "Award Ceremony" },
+      { url: "/legacy/2024/gallery_2.webp", alt: "Launch" },
+      { url: "/legacy/2024/gallery_3.webp", alt: "Compliance Testing" },
+      { url: "/legacy/2024/gallery_4.webp", alt: "Launch Prep" },
+      { url: "/legacy/2024/gallery_5.webp", alt: "Photo with Korean Team" },
+      { url: "/legacy/2024/gallery_6.webp", alt: "Post Launch" },
     ],
   },
   {
@@ -129,7 +128,7 @@ const pastProjects = [
     description: "Successful mission with minor hiccups!",
     fullDescription:
       "MinneSat competed in the 2023 AAS international CanSat competition, placing 24th overall. Despite encountering software and avionics challenges that prevented full mission execution, the team successfully completed launch and recovery while gaining critical experience across the full mission lifecycle—from mechanical integration to real-time flight operations. The project emphasized hands-on aerospace engineering and offered valuable lessons that will strengthen future competition efforts.",
-    imageUrl: "/legacy/CanSat2023_Icon.jpg",
+    imageUrl: "/legacy/CanSat2023_Icon.webp",
     year: "2023",
     location: "Staunton, Virginia",
     date: "June 2023",
@@ -138,22 +137,22 @@ const pastProjects = [
       {
         name: "Ben Stevens",
         role: "President",
-        imageUrl: "/legacy/2023/2023_President.jpeg",
+        imageUrl: "/legacy/2023/2023_President.webp",
       },
       {
         name: "Alex Zhu",
         role: "Vice President",
-        imageUrl: "/legacy/2023/2023_Vice.jpeg",
+        imageUrl: "/legacy/2023/2023_Vice.webp",
       },
       {
         name: "Ethan Kolby",
         role: "Software Lead",
-        imageUrl: "/legacy/2023/2023_Software.jpeg",
+        imageUrl: "/legacy/2023/2023_Software.webp",
       },
       {
         name: "Bodie Ziertman",
         role: "Mechanical Lead",
-        imageUrl: "/legacy/2023/2023_Mech.jpeg",
+        imageUrl: "/legacy/2023/2023_Mech.webp",
       },
     ],
     teamMembers: [
@@ -171,12 +170,12 @@ const pastProjects = [
     achievements: ["24th Place Overall"],
     // Gallery images for each project
     gallery: [
-      { url: "/legacy/2023/gallery1.jpg", alt: "CanSat Assembly" },
-      { url: "/legacy/2023/gallery2.jpg", alt: "Pre Launch Photo" },
-      { url: "/legacy/2023/gallery3.jpg", alt: "Pre Launch Photo" },
-      { url: "/legacy/2023/gallery4.jpg", alt: "Launch Photo" },
-      { url: "/legacy/2023/gallery5.JPG", alt: "CanSat Recovery" },
-      { url: "/legacy/2023/gallery6.jpg", alt: "Award Ceremony" },
+      { url: "/legacy/2023/gallery1.webp", alt: "CanSat Assembly" },
+      { url: "/legacy/2023/gallery2.webp", alt: "Pre Launch Photo" },
+      { url: "/legacy/2023/gallery3.webp", alt: "Pre Launch Photo" },
+      { url: "/legacy/2023/gallery4.webp", alt: "Launch Photo" },
+      { url: "/legacy/2023/gallery5.webp", alt: "CanSat Recovery" },
+      { url: "/legacy/2023/gallery6.webp", alt: "Award Ceremony" },
     ],
   },
   {
@@ -186,7 +185,7 @@ const pastProjects = [
     description: "Inaugural Competition Entry",
     fullDescription:
       "MinneSat competed in the 2022 AAS international CanSat competition, placing 42nd overall in our first entry in recent history. Despite avionics and communications failures that prevented payload deployment and data collection, the CanSat was successfully recovered and the main parachute performed reliably, laying the groundwork for stronger performance by future teams.",
-    imageUrl: "/legacy/CanSat2022_Icon.jpeg",
+    imageUrl: "/legacy/CanSat2022_Icon.webp",
     year: "2022",
     location: "Minneapolis, Minnesota",
     date: "May 2022",
@@ -195,34 +194,34 @@ const pastProjects = [
       {
         name: "Ben Stevens",
         role: "President",
-        imageUrl: "/legacy/2022/2022_president.jpeg",
+        imageUrl: "/legacy/2022/2022_president.webp",
       },
       {
         name: "Alex Zhu",
         role: "Vice President",
-        imageUrl: "/legacy/2022/2022_vice.jpeg",
+        imageUrl: "/legacy/2022/2022_vice.webp",
       },
       {
         name: "Bodie Ziertman",
         role: "Mechanical Lead",
-        imageUrl: "/legacy/2022/2022_mech.jpeg",
+        imageUrl: "/legacy/2022/2022_mech.webp",
       },
       {
         name: "Peyton Retzlaff",
         role: "Electrical Lead",
-        imageUrl: "/legacy/2022/2022_Electrical.png",
+        imageUrl: "/legacy/2022/2022_Electrical.webp",
       },
     ],
     teamMembers: ["Alex Zhu", "Ben Stevens", "Bodie Ziertman", "Peyton Retzlaff", "Max Tenuta", "Ethan Kolby"],
     achievements: ["42nd Place Overall"],
     // Gallery images for each project - updated with real images
     gallery: [
-      { url: "/legacy/2022/gallery1.JPG", alt: "CanSat Prototype Electronics" },
-      { url: "/legacy/2022/gallery2.jpeg", alt: "Rocket Launch Testing" },
-      { url: "/legacy/2022/gallery3.jpeg", alt: "Team Design Meeting" },
-      { url: "/legacy/2022/gallery4.JPG", alt: "Field Recovery Testing" },
-      { url: "/legacy/2022/gallery5.jpeg", alt: "Team Presentation" },
-      { url: "/legacy/2022/gallery6.jpeg", alt: "Team Award Photo" },
+      { url: "/legacy/2022/gallery1.webp", alt: "CanSat Prototype Electronics" },
+      { url: "/legacy/2022/gallery2.webp", alt: "Rocket Launch Testing" },
+      { url: "/legacy/2022/gallery3.webp", alt: "Team Design Meeting" },
+      { url: "/legacy/2022/gallery4.webp", alt: "Field Recovery Testing" },
+      { url: "/legacy/2022/gallery5.webp", alt: "Team Presentation" },
+      { url: "/legacy/2022/gallery6.webp", alt: "Team Award Photo" },
     ],
   },
 ]

@@ -13,14 +13,14 @@ const legacyProjects = [
     id: "2025",
     title: "CanSat 2025 Project",
     description: "Coming soon...",
-    imageUrl: "/earth-orbit-blueprint.png",
+    imageUrl: "/earth-orbit-blueprint.webp",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
     description: "Best performance to date!",
-    imageUrl: "/legacy/CanSat2024_Icon.jpg",
+    imageUrl: "/legacy/CanSat2024_Icon.webp",
     year: "2024",
   },
 ]
@@ -39,7 +39,7 @@ export default function Home() {
         <section className="relative h-[100vh] overflow-hidden bg-black">
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black z-10"></div>
           <Image
-            src="/header.jpg"
+            src="/header.webp"
             alt="CanSat Launch"
             width={1920}
             height={1080}
@@ -74,7 +74,7 @@ export default function Home() {
           {/* Background image with proper styling */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/home/home_about_us.jpg"
+              src="/home/home_about_us.webp"
               alt="Rocket launch background"
               fill
               className="object-cover opacity-40"
@@ -118,7 +118,7 @@ export default function Home() {
           {/* Background image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/team-competition.jpeg"
+              src="/team-competition.webp"
               alt="Team at competition"
               fill
               className="object-cover opacity-30"
@@ -142,10 +142,10 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { name: "Alexander Kim", position: "President", image: "/legacy/2025/2025_President.jpeg" },
-                { name: "Cole Harcey", position: "Mechanical Lead", image: "/legacy/2025/2025_Mech.jpeg" },
-                { name: "Martin Michelli", position: "Electrical Lead", image: "/legacy/2025/2025_Electrical.jpeg" },
-                { name: "Tyler Zenz", position: "Software Lead", image: "/legacy/2025/2025_Software.jpeg" },
+                { name: "Alexander Kim", position: "President", image: "/legacy/2025/2025_President.webp" },
+                { name: "Cole Harcey", position: "Mechanical Lead", image: "/legacy/2025/2025_Mech.webp" },
+                { name: "Martin Michelli", position: "Electrical Lead", image: "/legacy/2025/2025_Electrical.webp" },
+                { name: "Tyler Zenz", position: "Software Lead", image: "/legacy/2025/2025_Software.webp" },
               ].map((member, i) => (
                 <div key={i} className="group">
                   <div className="relative h-[350px] overflow-hidden rounded-2xl bg-zinc-800/70 backdrop-blur-sm p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-maroon/5 border border-white/10">
@@ -188,7 +188,7 @@ export default function Home() {
           {/* Background image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/home/home_legacy.jpg"
+              src="/home/home_legacy.webp"
               alt="Team setting up launch rail"
               fill
               className="object-cover opacity-35"
@@ -245,7 +245,7 @@ export default function Home() {
           {/* Background image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/home/home_sponsors.jpeg"
+              src="/home/home_sponsors.webp"
               alt="University of Minnesota campus and Minneapolis skyline"
               fill
               className="object-cover opacity-25"

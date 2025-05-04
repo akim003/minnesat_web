@@ -10,14 +10,14 @@ export const metadata = {
 export default function JoinPage() {
   // Array of companies where alumni work - updated with BAE Systems
   const alumniCompanies = [
-    { name: "Black River Systems Company", logo: "/alumni/logos/black_river_systems_logo.jpeg" },
-    { name: "MIT", logo: "/alumni/logos/mit_logo.jpeg" },
-    { name: "Airbus Group", logo: "/alumni/logos/airbusgroup_logo.jpeg" },
-    { name: "Honeywell", logo: "/alumni/logos/honeywell_logo.jpeg" },
-    { name: "Beta", logo: "/alumni/logos/Beta_logo.jpeg" },
-    { name: "SpaceX", logo: "/alumni/logos/spacex_logo.jpeg" },
-    { name: "Systems Planning & Analysis", logo: "/alumni/logos/SPA_logo.jpeg" },
-    { name: "BAE Systems", logo: "/alumni/logos/bae_systems_logo.jpeg" },
+    { name: "Black River Systems Company", logo: "/alumni/logos/black_river_systems_logo.webp" },
+    { name: "MIT", logo: "/alumni/logos/mit_logo.webp" },
+    { name: "Airbus Group", logo: "/alumni/logos/airbusgroup_logo.webp" },
+    { name: "Honeywell", logo: "/alumni/logos/honeywell_logo.webp" },
+    { name: "Beta", logo: "/alumni/logos/Beta_logo.webp" },
+    { name: "SpaceX", logo: "/alumni/logos/spacex_logo.webp" },
+    { name: "Systems Planning & Analysis", logo: "/alumni/logos/SPA_logo.webp" },
+    { name: "BAE Systems", logo: "/alumni/logos/bae_systems_logo.webp" },
   ]
 
   return (

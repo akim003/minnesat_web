@@ -14,7 +14,7 @@ export const sponsors: Sponsor[] = [
     description:
       "A Raytheon Technologies business, Collins Aerospace is a leader in technologically advanced and intelligent solutions for the global aerospace and defense industry.",
     level: "gold",
-    imageUrl: "/sponsors/collins-aerospace.png",
+    imageUrl: "/sponsors/collins-aerospace.webp",
     website: "https://www.collinsaerospace.com/",
     isPlaceholder: false,
   },
@@ -23,7 +23,7 @@ export const sponsors: Sponsor[] = [
     description:
       "The College of Science & Engineering at the University of Minnesota, supporting innovation and education in engineering and scientific disciplines.",
     level: "gold",
-    imageUrl: "/sponsors/umn-cse.jpeg",
+    imageUrl: "/sponsors/umn-cse.webp",
     website: "https://cse.umn.edu/",
     isPlaceholder: false,
   },
