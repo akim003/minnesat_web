@@ -2,6 +2,9 @@ import fs from "fs/promises"
 import path from "path"
 import sharp from "sharp"
 
+// Base output directory
+const OUTPUT_DIR = "updated_photos"
+
 // Directories to process
 const directories = [
   "public",
@@ -18,22 +21,33 @@ const directories = [
 // File extensions to convert
 const extensions = [".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"]
 
+// Ensure output directory exists
+async function ensureDirectoryExists(directory) {
+  try {
+    await fs.access(directory)
+  } catch (e) {
+    // Directory doesn't exist, create it
+    await fs.mkdir(directory, { recursive: true })
+  }
+}
+
 // Function to convert a file to WebP
 async function convertToWebP(filePath) {
   try {
     const fileExt = path.extname(filePath)
     if (!extensions.includes(fileExt)) return
 
-    const outputPath = filePath.replace(fileExt, ".webp")
+    // Create output path that preserves the directory structure
+    const relativePath = filePath // e.g., "public/legacy/2022/image.jpg"
+    const relativeDir = path.dirname(relativePath) // e.g., "public/legacy/2022"
+    const fileName = path.basename(filePath, fileExt) // e.g., "image"
 
-    // Skip if WebP version already exists
-    try {
-      await fs.access(outputPath)
-      console.log(`WebP already exists for ${filePath}, skipping...`)
-      return
-    } catch (e) {
-      // File doesn't exist, continue with conversion
-    }
+    // Create output directory path
+    const outputDirPath = path.join(OUTPUT_DIR, relativeDir) // e.g., "updated_photos/public/legacy/2022"
+    await ensureDirectoryExists(outputDirPath)
+
+    // Create output file path
+    const outputPath = path.join(outputDirPath, `${fileName}.webp`) // e.g., "updated_photos/public/legacy/2022/image.webp"
 
     console.log(`Converting ${filePath} to WebP...`)
 
@@ -47,6 +61,7 @@ async function convertToWebP(filePath) {
     const savings = (((originalSize - webpSize) / originalSize) * 100).toFixed(2)
 
     console.log(`✅ Converted ${path.basename(filePath)} to WebP (${savings}% smaller)`)
+    console.log(`   Saved to: ${outputPath}`)
   } catch (error) {
     console.error(`❌ Error converting ${filePath}:`, error.message)
   }
@@ -76,6 +91,9 @@ async function processDirectory(directory) {
 async function main() {
   console.log("🚀 Starting image conversion to WebP...")
 
+  // Create the base output directory
+  await ensureDirectoryExists(OUTPUT_DIR)
+
   // Process all directories
   for (const directory of directories) {
     console.log(`\nProcessing directory: ${directory}`)
@@ -83,6 +101,7 @@ async function main() {
   }
 
   console.log("\n✨ Conversion complete!")
+  console.log(`All WebP images have been saved to the '${OUTPUT_DIR}' directory.`)
 }
 
 main().catch(console.error)
