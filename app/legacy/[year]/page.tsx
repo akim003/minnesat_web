@@ -409,7 +409,7 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                     {[1, 2, 3, 4, 5, 6].map((num) => (
                       <div key={num} className="relative h-64 overflow-hidden rounded-lg border border-white/10 group">
                         <Image
-                          src={`/placeholder.svg?key=29jfq&height=300&width=400&query=cansat ${project.id} project image ${num}`}
+                          src={`/placeholder.svg?key=6tl07&key=29jfq&height=300&width=400&query=cansat ${project.id} project image ${num}`}
                           alt={`Future ${project.id} Project Image ${num}`}
                           fill
                           className="object-cover"
@@ -434,12 +434,6 @@ export default function LegacyProjectPage({ params }: LegacyProjectPageProps) {
                         className="object-cover"
                         loading="lazy"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        onError={(e) => {
-                          // Fallback for image loading errors
-                          const target = e.target as HTMLImageElement
-                          target.onerror = null // Prevent infinite loop
-                          target.src = `/placeholder.svg?height=300&width=400&query=cansat ${project.id} image ${i + 1}`
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p className="text-white text-sm font-medium">{image.alt || `Project Image ${i + 1}`}</p>
