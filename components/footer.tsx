@@ -48,11 +48,7 @@ export function Footer({ className }: FooterProps) {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link href="/team" className="text-white/60 hover:text-gold transition-colors">
-                  The Team
-                </Link>
-              </li>
+              {/* Removed the team link */}
               <li>
                 <Link href="/legacy" className="text-white/60 hover:text-gold transition-colors">
                   Legacy
