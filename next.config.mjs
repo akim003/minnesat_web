@@ -15,6 +15,20 @@ const nextConfig = {
     domains: ['v0.blob.com'],
     unoptimized: false,
   },
+  // Ensure static files like sitemap.xml are properly served
+  async headers() {
+    return [
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+        ],
+      },
+    ];
+  },
 }
 
 export default nextConfig
