@@ -12,9 +12,14 @@ export const metadata = {
   title: "MinneSat - University of Minnesota CanSat Team",
   description: "University of Minnesota's CanSat team, designing and building space systems for the future.",
   icons: {
-    icon: "/favicon.webp",
-    shortcut: "/favicon.webp",
-    apple: "/favicon.webp",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.png",
   },
     generator: 'v0.dev'
 }
@@ -27,6 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: "auto" }}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
