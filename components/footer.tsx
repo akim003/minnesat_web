@@ -32,6 +32,7 @@ export function Footer({ className }: FooterProps) {
                 width={40}
                 height={40}
                 className="h-10 w-10 rounded-full"
+                priority
               />
               <span className="text-xl font-bold tracking-tight">MinneSat</span>
             </div>
@@ -126,6 +127,7 @@ export function Footer({ className }: FooterProps) {
                   width={200}
                   height={60}
                   className="h-auto w-auto max-w-[200px] object-contain"
+                  priority
                 />
               </a>
               <div className="border-t-2 border-white/20 pt-4">

@@ -12,7 +12,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['v0.blob.com'],
+    unoptimized: false,
   },
 }
 
