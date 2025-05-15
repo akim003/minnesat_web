@@ -41,7 +41,7 @@ export function Footer({ className }: FooterProps) {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               <li>
                 <Link href="/" className="text-white/60 hover:text-gold transition-colors">
                   Home
@@ -70,6 +70,16 @@ export function Footer({ className }: FooterProps) {
               <li>
                 <Link href="/contact" className="text-white/60 hover:text-gold transition-colors">
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/sitemap" className="text-white/60 hover:text-gold transition-colors">
+                  Site Map
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-white/60 hover:text-gold transition-colors">
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -107,15 +117,15 @@ export function Footer({ className }: FooterProps) {
                 href="https://navicaweb.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity block py-4 flex"
-                aria-label="Powered by NAVICA"
+                className="hover:opacity-80 transition-opacity block py-3 flex"
+                aria-label="Powered by NAVICA Digital"
               >
                 <Image
-                  src="/footer/dark-plaque.png"
-                  alt="Powered by NAVICA"
-                  width={150}
-                  height={42}
-                  className="h-auto w-auto max-w-[150px] object-contain"
+                  src="/footer/navica-digital-plaque-new.png"
+                  alt="Powered by NAVICA Digital"
+                  width={200}
+                  height={60}
+                  className="h-auto w-auto max-w-[200px] object-contain"
                 />
               </a>
               <div className="border-t-2 border-white/20 pt-4">
