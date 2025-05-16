@@ -11,6 +11,93 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "top-engineering-clubs-university-of-minnesota",
+    title: "Top Engineering Clubs at the University of Minnesota",
+    excerpt:
+      "Discover the most innovative student engineering teams at UMN, from CanSat and rockets to solar vehicles and Formula SAE racing.",
+    content: `
+      # Top Engineering Clubs at the University of Minnesota
+
+      The University of Minnesota is home to some of the most ambitious and innovative student engineering teams in the country. Whether you're into satellites, rockets, race cars, or solar-powered vehicles, there's a place for you to learn, build, and compete. Here's a look at five standout engineering clubs on campus — including our very own MinneSat team.
+
+      ## MinneSat – The CanSat Competition Team
+
+      <a href="https://umn-minnesat.org/join" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold/80 transition-colors">MinneSat</a> is the University of Minnesota's official CanSat competition team, and we're proud to have placed 13th internationally at the 2024 AAS CanSat Competition.
+
+      In this challenge, teams build a canister-sized satellite that simulates the experience of being deployed from a rocket. Our 2024 mission required a custom-built heat shield to safely slow descent during reentry — a true test of real-world aerospace engineering.
+
+      With a travel team of 10 and about 20 active members total, we offer hands-on experience in:
+
+      - Soldering and PCB design (Electrical Team)
+      - Flight software and telemetry (Software Team)
+      - CAD and structural prototyping (Mechanical Team)
+
+      Whether you're new to engineering or looking to sharpen your skills in a competitive setting, MinneSat is a perfect launchpad.
+
+      ## Solar Vehicle Project (SVP)
+
+      Founded in 1990, the <a href="https://umnsvp.org/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold/80 transition-colors">UMN Solar Vehicle Project</a> has built 15 solar-powered vehicles, racing on three continents in over 30 competitions. Their car Freya won the 2022 American Solar Challenge MOV Class, while Gaia placed 2nd in the 2023 Bridgestone World Solar Challenge — the highest finish by any American team that year.
+
+      Notable 2023 achievements:
+
+      - 2nd place in the CSIRO Cruiser Class
+      - Winner of the Eberle-Selwood Arrow Cup
+
+      UMNSVP continues to lead the global solar racing scene through engineering excellence, sustainability, and teamwork.
+
+      ## Gopher Motorsports – Formula SAE
+
+      <a href="https://gophermotorsports.com/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold/80 transition-colors">Gopher Motorsports</a> builds two cars each year — an internal combustion vehicle and an electric vehicle — to compete in the global Formula SAE series. Their mission is to design, market, and race a single-seat, open-wheel car for weekend autocrossers.
+
+      Why join?
+
+      - Ranked in the Top 10 Formula SAE teams nationwide
+      - Open to all majors — from ME to CS to finance
+      - Huge opportunities in manufacturing, embedded systems, and team logistics
+
+      Whether you're into racing, controls, or business, there's a subteam for you.
+
+      ## Design Build Fly (DBF)
+
+      UMN's Design Build Fly team designs and builds radio-controlled aircraft for the international DBF competition organized by AIAA. While the team didn't attend competition in 2024, its leadership is focused on rebuilding and returning to form.
+
+      The club is a hub for aerospace engineering students, with work spanning:
+
+      - Aircraft design and simulation
+      - Lightweight fabrication
+      - RC systems integration
+
+      President Thomas Herbert hopes to elevate DBF back into competitive shape by next year.
+
+      ## Rocket Team
+
+      The <a href="https://rkt.aem.umn.edu/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold/80 transition-colors">University of Minnesota Rocket Team</a> designs, builds, and launches high-powered rockets and competes in events like:
+
+      - Spaceport America Cup (SAC)
+      - Intercollegiate Rocket Engineering Competition (IREC)
+      - NASA USLI and Alka Rocket Challenge
+
+      Recent Highlights:
+
+      - Winner of the 30k SRAD category at SAC 2023 and 2024
+      - Overall champion in SAC 2021
+      - Highest recorded launch: 44,910 feet
+
+      The team also runs a High Altitude R&D Project, focused on SRAD solid rocket motor performance.
+
+      ## Join the Engineering Community at UMN
+
+      If you're a student at the University of Minnesota looking to build, innovate, and join a community of future engineers, these clubs are where theory meets reality.
+
+      Looking to join MinneSat?
+      Visit our <a href="/join" class="text-gold hover:text-gold/80 transition-colors">Join page</a> to get started with hands-on aerospace experience.
+    `,
+    author: "MinneSat Team",
+    date: "May 10, 2025",
+    imageUrl: "/team-competition.webp",
+    tags: ["Engineering Clubs", "UMN", "CanSat", "Solar Vehicle", "Rocket Team", "Formula SAE", "Design Build Fly"],
+  },
+  {
     id: "cansat-2024-competition-recap",
     title: "CanSat 2024 Competition Recap",
     excerpt: "Our team's journey through the 2024 CanSat competition, from design challenges to launch day success.",
