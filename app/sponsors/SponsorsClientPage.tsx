@@ -56,7 +56,10 @@ export default function SponsorsClientPage() {
                 <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8">
+                <Button
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 bg-transparent"
+                >
                   <Link href="/sponsors/info">Learn More</Link>
                 </Button>
               </div>
@@ -144,7 +147,7 @@ export default function SponsorsClientPage() {
                       ) : (
                         <Button
                           variant="outline"
-                          className="border-zinc-300/30 text-zinc-300 hover:bg-zinc-300/10 w-full"
+                          className="border-zinc-300/30 text-zinc-300 hover:bg-zinc-300/10 w-full bg-transparent"
                           onClick={() => window.open(sponsor.website, "_blank")}
                         >
                           Visit Website
@@ -229,7 +232,7 @@ export default function SponsorsClientPage() {
                       ) : (
                         <Button
                           variant="outline"
-                          className="border-amber-700/30 text-amber-700 hover:bg-amber-700/10 w-full"
+                          className="border-amber-700/30 text-amber-700 hover:bg-amber-700/10 w-full bg-transparent"
                           onClick={() => window.open(sponsor.website, "_blank")}
                         >
                           Visit Website
@@ -251,7 +254,10 @@ export default function SponsorsClientPage() {
                 <Button className="bg-maroon hover:bg-maroon/90 rounded-full px-8">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8">
+                <Button
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10 rounded-full px-8 bg-transparent"
+                >
                   <Link href="/sponsors/info">Learn More</Link>
                 </Button>
               </div>

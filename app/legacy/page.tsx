@@ -7,30 +7,37 @@ import { Navbar } from "@/components/navbar"
 // Updated past projects data for 2023, 2024, and 2025
 const pastProjects = [
   {
-    id: "2025",
-    title: "CanSat 2025 Project",
+    id: "2026",
+    title: "CanSat 2026 Project",
     description: "Shhhh... Coming soon",
     imageUrl: "/earth-orbit-blueprint.webp",
+    year: "2026",
+  },
+  {
+    id: "2025",
+    title: "CanSat 2025 Project",
+    description: "3rd place in the US! Our best performance to date!",
+    imageUrl: "/legacy/CanSat2025_Icon.webp",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
-    description: "Best performance to date!",
+    description: "Sucessfuly delivered the mission payload!",
     imageUrl: "/legacy/CanSat2024_Icon.webp",
     year: "2024",
   },
   {
     id: "2023",
     title: "CanSat 2023 Project",
-    description: "Our first competition entry that established the foundation for future MinneSat designs.",
+    description: "Simulated a planetary probe lander mission.",
     imageUrl: "/legacy/CanSat2023_Icon.webp",
     year: "2023",
   },
   {
     id: "2022",
     title: "CanSat 2022 Project",
-    description: "Our prototype design that laid the groundwork for the MinneSat team's formation.",
+    description: "First University of Minnesota AAS CanSat Competiton appearance in over a decade!",
     imageUrl: "/legacy/CanSat2022_Icon.webp",
     year: "2022",
   },

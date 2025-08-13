@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, Medal, Trophy, Plus } from "lucide-react"
 import { type Sponsor, getSponsorLevelClass, getSponsorBorderClass } from "@/data/sponsors"
+import { useState } from "react"
 
 // Update the SponsorDisplayProps interface to include more customization options
 interface SponsorDisplayProps {
@@ -24,10 +25,12 @@ export function SponsorDisplay({
   compact = false,
   customBgColor,
   customBorderWidth,
-  customTextColor,
   customBorderColor,
   customButtonStyle,
 }: SponsorDisplayProps) {
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
+  const customTextColor = "" // Declare customTextColor variable
+
   // Get the appropriate icon for each sponsor level
   const getSponsorLevelIcon = (level: string) => {
     switch (level) {
@@ -45,6 +48,10 @@ export function SponsorDisplay({
   // Handle direct navigation to sponsor info with anchor
   const handleSponsorInfoClick = (level: string) => {
     window.location.href = `/sponsors/info#${level}-tier`
+  }
+
+  if (sponsors.length === 0) {
+    return null
   }
 
   return (
@@ -73,14 +80,21 @@ export function SponsorDisplay({
                   </div>
                 ) : (
                   <div className="w-full h-full flex items-center justify-start">
-                    <Image
-                      src={sponsor.imageUrl || "/placeholder.svg"}
-                      alt={sponsor.name}
-                      width={120}
-                      height={60}
-                      className="object-contain max-h-full"
-                      loading="lazy"
-                    />
+                    {!imageErrors.has(sponsor.name) ? (
+                      <Image
+                        src={sponsor.imageUrl || "/placeholder.svg"}
+                        alt={sponsor.name}
+                        width={120}
+                        height={60}
+                        className="object-contain max-h-full"
+                        loading="lazy"
+                        onError={() => setImageErrors((prev) => new Set(prev).add(sponsor.name))}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white/10 rounded-lg flex items-center justify-center">
+                        <span className="text-white/60 text-sm font-medium">{sponsor.name}</span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

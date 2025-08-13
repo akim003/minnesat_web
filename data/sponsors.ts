@@ -1,135 +1,87 @@
-// Sponsor data with level information
 export interface Sponsor {
   name: string
-  description: string
   level: "gold" | "silver" | "bronze"
-  imageUrl: string
-  website: string
-  isPlaceholder: boolean
+  imageUrl?: string
+  website?: string
+  description?: string
+  isPlaceholder?: boolean
 }
 
 export const sponsors: Sponsor[] = [
   {
-    name: "Collins Aerospace",
-    description:
-      "A Raytheon Technologies business, Collins Aerospace is a leader in technologically advanced and intelligent solutions for the global aerospace and defense industry.",
-    level: "gold",
-    imageUrl: "/sponsors/collins-aerospace.webp",
-    website: "https://www.collinsaerospace.com/",
-    isPlaceholder: false,
-  },
-  {
-    name: "University of Minnesota College of Science & Engineering",
-    description:
-      "The College of Science & Engineering at the University of Minnesota, supporting innovation and education in engineering and scientific disciplines.",
-    level: "gold",
-    imageUrl: "/sponsors/umn-cse.webp",
-    website: "https://cse.umn.edu/",
-    isPlaceholder: false,
-  },
-  {
     name: "Northrop Grumman",
-    description:
-      "A leading global aerospace and defense technology company, delivering innovative systems, products and solutions to government and commercial customers worldwide.",
     level: "silver",
     imageUrl: "/sponsors/northrop-grumman.webp",
-    website: "https://www.northropgrumman.com/",
-    isPlaceholder: false,
+    website: "https://www.northropgrumman.com",
+    description: "A leading global aerospace and defense technology company.",
+  },
+  {
+    name: "Collins Aerospace",
+    level: "gold",
+    imageUrl: "/sponsors/collins-aerospace.webp",
+    website: "https://www.collinsaerospace.com",
+    description: "Providing intelligent solutions for the aerospace and defense industry.",
+  },
+  {
+    name: "University of Minnesota College of Science and Engineering",
+    level: "gold",
+    imageUrl: "/sponsors/umn-cse.webp",
+    website: "https://cse.umn.edu",
+    description: "Supporting the next generation of engineers and scientists.",
   },
 ]
 
-// Placeholder sponsor cards
-export const placeholderSponsors = [
+export const placeholderSponsors: Sponsor[] = [
   {
-    name: "Join Our Silver Sponsors",
-    description:
-      "Partner with us to support innovation and visibility. Your contribution helps us acquire essential components and materials.",
+    name: "Your Company Here",
+    level: "gold",
+    imageUrl: "/sponsors/your-logo-here.webp",
+    website: "/sponsors/info",
+    description: "Partner with us to support aerospace engineering education and innovation.",
+    isPlaceholder: true,
+  },
+  {
+    name: "Your Company Here",
     level: "silver",
     imageUrl: "/sponsors/your-logo-here.webp",
+    website: "/sponsors/info",
+    description: "Join our mission to advance space technology and education.",
     isPlaceholder: true,
   },
   {
-    name: "Join Our Silver Sponsors",
-    description:
-      "Support the next generation of aerospace engineers and gain recognition among future industry professionals.",
-    level: "silver",
-    imageUrl: "/sponsors/your-logo-here.webp",
-    isPlaceholder: true,
-  },
-  {
-    name: "Join Our Bronze Sponsors",
-    description: "Every contribution matters! Join our bronze tier to help students achieve their engineering dreams.",
+    name: "Your Company Here",
     level: "bronze",
     imageUrl: "/sponsors/your-logo-here.webp",
-    isPlaceholder: true,
-  },
-  {
-    name: "Join Our Bronze Sponsors",
-    description: "Support student innovation and help us reach new heights in aerospace engineering education.",
-    level: "bronze",
-    imageUrl: "/sponsors/your-logo-here.webp",
-    isPlaceholder: true,
-  },
-  {
-    name: "Join Our Bronze Sponsors",
-    description: "Be part of our journey to design and build innovative space systems for the CanSat competition.",
-    level: "bronze",
-    imageUrl: "/sponsors/your-logo-here.webp",
+    website: "/sponsors/info",
+    description: "Support the future of aerospace engineering at the University of Minnesota.",
     isPlaceholder: true,
   },
 ]
 
-// Helper function to get the appropriate icon for each sponsor level
-export const getSponsorLevelIcon = (level: string) => {
-  switch (level) {
-    case "gold":
-      return "trophy"
-    case "silver":
-      return "medal"
-    case "bronze":
-      return "award"
-    default:
-      return null
-  }
-}
-
-// Helper function to get the appropriate color class for each sponsor level
+// Helper functions for styling
 export const getSponsorLevelClass = (level: string) => {
   switch (level) {
     case "gold":
-      return "bg-gold/10 text-gold"
+      return "bg-gold/10 text-gold border-gold/30"
     case "silver":
-      return "bg-zinc-300/10 text-zinc-300"
+      return "bg-zinc-300/10 text-zinc-300 border-zinc-300/30"
     case "bronze":
-      return "bg-amber-700/10 text-amber-700"
+      return "bg-amber-700/10 text-amber-700 border-amber-700/30"
     default:
-      return ""
+      return "bg-white/10 text-white border-white/30"
   }
 }
 
-// Helper function to get the appropriate border color class for each sponsor level
-export const getSponsorBorderClass = (level: string, isPlaceholder: boolean) => {
-  if (!isPlaceholder) {
-    switch (level) {
-      case "gold":
-        return "border-gold/30 hover:border-gold/50"
-      case "silver":
-        return "border-zinc-300/30 hover:border-zinc-300/50"
-      case "bronze":
-        return "border-amber-700/30 hover:border-amber-700/50"
-      default:
-        return "border-white/30 hover:border-white/50"
-    }
-  } else {
-    switch (level) {
-      case "gold":
-        return "border-gold/30 border-dashed hover:border-gold/70"
-      case "silver":
-        return "border-zinc-300/30 border-dashed hover:border-zinc-300/70"
-      case "bronze":
-        return "border-amber-700/30 border-dashed hover:border-amber-700/70"
-      default:
-        return "border-white/30 border-dashed hover:border-white/70"
-    }
+export const getSponsorBorderClass = (level: string, isPlaceholder?: boolean) => {
+  const baseClass = isPlaceholder ? "border-dashed" : ""
+  switch (level) {
+    case "gold":
+      return `${baseClass} border-gold/30 hover:border-gold/50`
+    case "silver":
+      return `${baseClass} border-zinc-300/30 hover:border-zinc-300/50`
+    case "bronze":
+      return `${baseClass} border-amber-700/30 hover:border-amber-700/50`
+    default:
+      return `${baseClass} border-white/30 hover:border-white/50`
   }
 }

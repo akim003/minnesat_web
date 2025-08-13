@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 
@@ -35,10 +36,56 @@ export default function JoinPage() {
               </div>
               <h1 className="text-4xl font-bold tracking-tight mb-4">Become a MinneSat Member</h1>
               <div className="w-20 h-1 bg-gold mb-6"></div>
-              <p className="max-w-3xl text-white/70">
+              <p className="max-w-3xl text-white/70 mb-8">
                 We're looking for passionate students to join our team and help us design, build, and launch our next
                 CanSat project.
               </p>
+
+              {/* Hero Contact Button */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-maroon hover:bg-maroon/80 text-white font-medium rounded-lg transition-colors duration-200"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-2"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  Contact Us
+                </Link>
+                <a
+                  href="mailto:minnesat@umn.edu"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-2"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  Email Us
+                </a>
+              </div>
             </div>
 
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
@@ -122,6 +169,30 @@ export default function JoinPage() {
                     </div>
                   </li>
                 </ul>
+
+                {/* Contact Button after Why Join section */}
+                <div className="mt-8">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200"
+                  >
+                    Have Questions? Contact Us
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="ml-2"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -184,7 +255,57 @@ export default function JoinPage() {
                   <p className="text-white/70 text-sm">Begin working on the current CanSat project</p>
                 </div>
               </div>
+
+              {/* Contact Button in How to Join section */}
+              <div className="mt-8 text-center">
+                <p className="text-white/70 mb-4">Ready to get started or have questions about joining?</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-maroon hover:bg-maroon/80 text-white font-medium rounded-lg transition-colors duration-200"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mr-2"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Get in Touch
+                  </Link>
+                  <a
+                    href="mailto:minnesat@umn.edu"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-black font-medium rounded-lg transition-colors duration-200"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mr-2"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Send Email
+                  </a>
+                </div>
+              </div>
             </div>
+
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-6 text-center">Meeting Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -257,9 +378,29 @@ export default function JoinPage() {
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <p className="text-white/70">
+                <p className="text-white/70 mb-4">
                   Prospective new members are welcome to attend any general meeting. No prior experience necessary!
                 </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200"
+                >
+                  Need Directions? Contact Us
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-2"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </Link>
               </div>
             </div>
 
@@ -295,6 +436,59 @@ export default function JoinPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Final Call to Action */}
+            <div className="mt-20 bg-gradient-to-r from-maroon/20 to-gold/20 p-8 rounded-2xl border border-white/10 text-center">
+              <h2 className="text-2xl font-bold mb-4">Ready to Launch Your Career?</h2>
+              <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+                Join MinneSat today and become part of a team that's pushing the boundaries of space technology. Whether
+                you're interested in software, mechanical, or electrical engineering, we have a place for you.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-maroon hover:bg-maroon/80 text-white font-medium rounded-lg transition-colors duration-200 text-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-2"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  Contact Our Team
+                </Link>
+                <a
+                  href="mailto:minnesat@umn.edu"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200 text-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-2"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  Email Us Directly
+                </a>
               </div>
             </div>
           </div>

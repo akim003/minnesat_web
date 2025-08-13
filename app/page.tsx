@@ -15,14 +15,14 @@ const legacyProjects = [
   {
     id: "2025",
     title: "CanSat 2025 Project",
-    description: "Coming soon...",
-    imageUrl: "/earth-orbit-blueprint.webp",
+    description: "3rd place in the US! Our best performance to date!",
+    imageUrl: "/legacy/CanSat2025_Icon.webp",
     year: "2025",
   },
   {
     id: "2024",
     title: "CanSat 2024 Project",
-    description: "Best performance to date!",
+    description: "Sucessfuly delivered the mission payload!",
     imageUrl: "/legacy/CanSat2024_Icon.webp",
     year: "2024",
   },
@@ -30,8 +30,13 @@ const legacyProjects = [
 
 export default function Home() {
   const [copied, setCopied] = useState(false)
-  // Get only real (non-placeholder) sponsors for the home page
-  const realSponsors = sponsors.filter((sponsor) => !sponsor.isPlaceholder)
+  // Get only real (non-placeholder) sponsors and sort by level (gold first, then silver, then bronze)
+  const realSponsors = sponsors
+    .filter((sponsor) => !sponsor.isPlaceholder)
+    .sort((a, b) => {
+      const levelOrder = { gold: 0, silver: 1, bronze: 2 }
+      return levelOrder[a.level] - levelOrder[b.level]
+    })
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
@@ -59,7 +64,7 @@ export default function Home() {
                   <span className="block text-white">MinneSat</span>
                 </h1>
                 <p className="max-w-[700px] text-white md:text-xl font-semibold">
-                  Launching the Next Generation of Aerospace Engineers
+                  3rd in the US @ the 2024-2025 International CanSat Competition
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
                   <Button asChild className="bg-maroon hover:bg-maroon/90 text-white rounded-full px-8">
@@ -140,19 +145,19 @@ export default function Home() {
           <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center mb-16">
               <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-sm text-gold mb-4">Our Team</div>
-              <h2 className="text-3xl font-bold tracking-tight mb-4">2025 Leadership</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">2026 Leadership</h2>
               <div className="w-20 h-1 bg-gold mb-6"></div>
               <p className="max-w-3xl text-white/70">
-                Meet the student leaders guiding our 2025 CanSat project. This dedicated team coordinates our
+                Meet the student leaders guiding our 2026 CanSat project. This dedicated team coordinates our
                 engineering efforts across mechanical, electrical, and software disciplines.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { name: "Alexander Kim", position: "President", image: "/legacy/2025/2025_President.webp" },
-                { name: "Cole Harcey", position: "Mechanical Lead", image: "/legacy/2025/2025_Mech.webp" },
+                { name: "Franklin Woolley", position: "President", image: "/legacy/2026/2026_President.webp" },
+                { name: "Alexander Kim", position: "Software Lead", image: "/legacy/2025/2025_President.webp" },
                 { name: "Martin Michelli", position: "Electrical Lead", image: "/legacy/2025/2025_Electrical.webp" },
-                { name: "Tyler Zenz", position: "Software Lead", image: "/legacy/2025/2025_Software.webp" },
+                { name: "John Kronkvist", position: "Mechanical Lead", image: "/legacy/2026/2026_Mech.webp" },
               ].map((member, i) => (
                 <div key={i} className="group">
                   <div className="relative h-[350px] overflow-hidden rounded-2xl bg-zinc-800/70 backdrop-blur-sm p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-maroon/5 border border-white/10">
