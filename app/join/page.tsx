@@ -334,11 +334,11 @@ export default function JoinPage() {
                   <div className="flex-1">
                     <div className="mb-4">
                       <p className="text-white/70 mb-1">General Meetings:</p>
-                      <p className="text-white/90 font-medium">Wednesdays, 6:45 PM - 7:30 PM</p>
+                      <p className="text-white/90 font-medium">Wednesdays, 6:30 PM - 7:30 PM</p>
                     </div>
                     <div>
                       <p className="text-white/70 mb-1">Workshop Time:</p>
-                      <p className="text-white/90 font-medium">Wednesday, 7:30 PM - 8:30 PM</p>
+                      <p className="text-white/90 font-medium">Wednesdays, 7:30 PM - 8:30 PM</p>
                     </div>
                   </div>
                 </div>

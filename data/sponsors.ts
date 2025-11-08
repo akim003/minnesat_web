@@ -9,11 +9,12 @@ export interface Sponsor {
 
 export const sponsors: Sponsor[] = [
   {
-    name: "Northrop Grumman",
+    name: "Cummins",
     level: "silver",
-    imageUrl: "/sponsors/northrop-grumman.webp",
-    website: "https://www.northropgrumman.com",
-    description: "A leading global aerospace and defense technology company.",
+    imageUrl: "/sponsors/cummins.webp",
+    website: "https://www.cummins.com",
+    description:
+      "A global power technology leader designing, manufacturing, and distributing engines and related technologies.",
   },
   {
     name: "Collins Aerospace",

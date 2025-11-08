@@ -70,9 +70,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-bold mb-2">Meeting Times</h3>
                       <p className="text-white/70 mb-1">General Meetings:</p>
-                      <p className="text-white/90 font-medium">Wednesdays, 6:45 PM - 7:30 PM</p>
+                      <p className="text-white/90 font-medium">Wednesdays, 6:30 PM - 7:30 PM</p>
                       <p className="text-white/70 mt-2 mb-1">Workshop Time:</p>
-                      <p className="text-white/90 font-medium">Wednesday, 7:30 PM - 8:30 PM</p>
+                      <p className="text-white/90 font-medium">Wednesdays, 7:30 PM - 8:30 PM</p>
                     </div>
                   </div>
                 </div>
