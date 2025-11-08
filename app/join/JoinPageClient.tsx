@@ -23,15 +23,15 @@ export default function JoinPageClient() {
 
   const copyEmailToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText("minnesat@umn.edu")
+      await navigator.clipboard.writeText("wooll052@umn.edu")
       toast({
         title: "Email copied!",
-        description: "minnesat@umn.edu has been copied to your clipboard.",
+        description: "wooll052@umn.edu has been copied to your clipboard.",
       })
     } catch (err) {
       toast({
         title: "Failed to copy",
-        description: "Please try again or email us directly at minnesat@umn.edu",
+        description: "Please try again or email us directly at wooll052@umn.edu",
         variant: "destructive",
       })
     }
@@ -80,27 +80,6 @@ export default function JoinPageClient() {
                   </svg>
                   Contact Us
                 </Link>
-                <button
-                  onClick={copyEmailToClipboard}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  Email Us
-                </button>
               </div>
             </div>
 
@@ -297,27 +276,6 @@ export default function JoinPageClient() {
                     </svg>
                     Get in Touch
                   </Link>
-                  <button
-                    onClick={copyEmailToClipboard}
-                    className="inline-flex items-center justify-center px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-black font-medium rounded-lg transition-colors duration-200"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mr-2"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                    Send Email
-                  </button>
                 </div>
               </div>
             </div>
@@ -484,27 +442,6 @@ export default function JoinPageClient() {
                   </svg>
                   Contact Our Team
                 </Link>
-                <button
-                  onClick={copyEmailToClipboard}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold/80 text-black font-medium rounded-lg transition-colors duration-200 text-lg"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  Email Us Directly
-                </button>
               </div>
             </div>
           </div>

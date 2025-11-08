@@ -40,7 +40,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  // Enhanced markdown to HTML converter.
+  // Enhanced markdown to HTML converter
   const formatContent = (content: string) => {
     // Process the content line by line
     const lines = content.split("\n")
