@@ -40,12 +40,12 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-bold mb-2">Email</h3>
                       <p className="text-white/70 mb-1">General Inquiries:</p>
-                      <a href="mailto:wooll052@umn.edu " className="text-gold hover:underline">
-                        wooll052@umn.edu 
+                      <a href="mailto:umn.minnesat@gmail.com" className="text-gold hover:underline">
+                        umn.minnesat@gmail.com
                       </a>
                       <p className="text-white/70 mt-2 mb-1">Sponsorship Opportunities:</p>
-                      <a href="mailto:wooll052@umn.edu " className="text-gold hover:underline">
-                        wooll052@umn.edu 
+                      <a href="mailto:umn.minnesat@gmail.com" className="text-gold hover:underline">
+                        umn.minnesat@gmail.com
                       </a>
                     </div>
                   </div>

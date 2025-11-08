@@ -326,7 +326,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-gold mr-3" />
-                    <span className="text-white/80">wooll052@umn.edu </span>
+                    <span className="text-white/80">umn.minnesat@gmail.com</span>
                   </div>
                   <div className="flex items-center">
                     <svg
