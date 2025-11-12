@@ -30,6 +30,13 @@ export const sponsors: Sponsor[] = [
     website: "https://cse.umn.edu",
     description: "Supporting the next generation of engineers and scientists.",
   },
+  {
+    name: "University of Minnesota Aerospace Engineering & Mechanics",
+    level: "gold",
+    imageUrl: "/sponsors/umn-aem.webp",
+    website: "https://cse.umn.edu/aem",
+    description: "Transforming active learners into lifelong contributors and leaders.",
+  },
 ]
 
 export const placeholderSponsors: Sponsor[] = [
