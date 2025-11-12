@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  // Get the most recent post as featured.
+  // Get the most recent post as featured
   const featuredPost = blogPosts[0]
   // Display remaining posts
   const regularPosts = blogPosts.slice(1)
