@@ -37,6 +37,14 @@ export const sponsors: Sponsor[] = [
     website: "https://cse.umn.edu/aem",
     description: "Transforming active learners into lifelong contributors and leaders.",
   },
+  {
+    name: "Northrop Grumman",
+    level: "silver",
+    imageUrl: "/sponsors/northrop.webp",
+    website: "https://www.northropgrumman.com/",
+    description:
+      "Northrop Grumman solves the toughest problems in space, aeronautics, defense and cyberspace to meet the ever evolving needs of our customers worldwide.",
+  },
 ]
 
 export const placeholderSponsors: Sponsor[] = [
